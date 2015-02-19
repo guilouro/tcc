@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {4.2}\textit {Global Best Particle Swarm Optimization}}{17}
 \contentsline {section}{\numberline {4.3}\textit {Decreasing Weight Particle Swarm Optimization}}{17}
 \contentsline {section}{\numberline {4.4}Time-Varying Acceleration Coefficients PSO}{18}
-\contentsline {section}{\numberline {4.5}Fully Informed PSO}{19}
+\contentsline {section}{\numberline {4.5}Fully Informed PSO}{18}
 \contentsline {chapter}{\numberline {5}Algoritmos e Modelo de Ilhas Paralelizadas}{20}
 \contentsline {section}{\numberline {5.1}Modelo de Ilhas Paralelizadas}{20}
 \contentsline {chapter}{\numberline {6}Experimentos Computacionais}{21}
