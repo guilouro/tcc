@@ -1,0 +1,102 @@
+%%
+%% This is file `subfloat.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% subfloat.dtx  (with options: `package')
+%% 
+%%   subfloat package
+%% 
+%%   Copyright  1999 Harald Harders
+%% 
+%%   This program can be redistributed and/or modified under the terms
+%%   of the LaTeX Project Public License Distributed from CTAN
+%%   archives in directory macros/latex/base/lppl.txt; either
+%%   version 1 of the License, or any later version.
+%% 
+%%   h.harders@tu-bs.de
+%% 
+\def\packagename{subfloat}
+\def\fileversion{1.03}
+\def\filedate{1999/10/08}
+\def\docdate{1999/10/08}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{subfloat}
+         [\filedate\space version \fileversion]
+\message{Package `subfloat', Version \fileversion\space of \filedate.}
+\let\@xp=\expandafter
+\let\@nx=\noexpand
+\newcounter{parentfigure}% Counter for ``parent figure''.
+\newcounter{parenttable}% Counter for ``parent table''.
+\newenvironment{subfigures}{%
+  \refstepcounter{figure}%
+  \begingroup % conservative approach
+  \let\protect\@nx
+  \edef\@tempa{\def\@nx\theparentfigure{\thefigure}}%
+  \@xp\endgroup\@tempa
+  \setcounter{parentfigure}{\value{figure}}%
+  \setcounter{figure}{0}%
+  \def\thefigure{\theparentfigure\alph{figure}}%
+  \ignorespaces
+}{%
+  \setcounter{figure}{\value{parentfigure}}%
+  \global\@ignoretrue
+}
+%%
+\newenvironment{subtables}{%
+  \refstepcounter{table}%
+  \begingroup % conservative approach
+  \let\protect\@nx
+  \edef\@tempa{\def\@nx\theparenttable{\thetable}}%
+  \@xp\endgroup\@tempa
+  \setcounter{parenttable}{\value{table}}%
+  \setcounter{table}{0}%
+  \def\thetable{\theparenttable\alph{table}}%
+  \ignorespaces
+}{%
+  \setcounter{table}{\value{parenttable}}%
+  \global\@ignoretrue
+}
+%%
+\newcommand{\subfiguresbegin}{%
+  \refstepcounter{figure}%
+  \begingroup % conservative approach
+  \let\protect\@nx
+  \edef\@tempa{\def\@nx\theparentfigure{\thefigure}}%
+  \@xp\endgroup\@tempa
+  \setcounter{parentfigure}{\value{figure}}%
+  \setcounter{figure}{0}%
+  \let\theoriginalfigure\thefigure
+  \def\thefigure{\theparentfigure\alph{figure}}%
+  \ignorespaces
+}
+%%
+\newcommand{\subfiguresend}{%
+  \let\thefigure\theoriginalfigure
+  \setcounter{figure}{\value{parentfigure}}%
+  \global\@ignoretrue
+}
+%%
+\newcommand{\subtablesbegin}{%
+  \refstepcounter{table}%
+  \begingroup % conservative approach
+  \let\protect\@nx
+  \edef\@tempa{\def\@nx\theparenttable{\thetable}}%
+  \@xp\endgroup\@tempa
+  \setcounter{parenttable}{\value{table}}%
+  \setcounter{table}{0}%
+  \let\theoriginaltable\thetable
+  \def\thetable{\theparenttable\alph{table}}%
+  \ignorespaces
+}
+%%
+\newcommand{\subtablesend}{%
+  \let\thetable\theoriginaltable
+  \setcounter{table}{\value{parenttable}}%
+  \global\@ignoretrue
+}
+%%
+\endinput
+%%
+%% End of file `subfloat.sty'.

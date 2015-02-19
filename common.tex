@@ -1,0 +1,42 @@
+\usepackage[normalem]{ulem}
+\usepackage{color}
+
+% Uso: \comando{texto}, onde 'comando' pode ser 'entra', 'sai', 'rever', 'todo' 
+%      ou 
+%      \comando[nota adicional]{texto} 
+
+\newcommand{\entra}[2][]{%
+   {\color{blue}#2}%
+   \ifx&#1&%
+      {}% #1 is empty
+    \else%
+      \footnote{{\color{blue}(entra):} #1}% #1 is nonempty
+    \fi%
+}%
+
+\newcommand{\sai}[2][]{%
+   {\color{black}\sout{#2}}%
+   \ifx&#1&%
+      {}% #1 is empty
+    \else%
+      \footnote{{\color{black}(sai):} #1}% #1 is nonempty
+    \fi%
+}%
+
+\newcommand{\rever}[2][]{%
+   {\color{magenta}#2}%
+   \ifx&#1&%
+      {}% #1 is empty
+    \else%
+      \footnote{{\color{magenta}(rever):} #1}% #1 is nonempty
+    \fi%
+}%
+
+\newcommand{\todo}[2][]{%
+   {\color{red}\textbf{TODO}: \textit{#2}}%
+   \ifx&#1&%
+      {}% #1 is empty
+    \else%
+      \footnote{{\color{red}(todo):} #1}% #1 is nonempty
+    \fi%
+}%

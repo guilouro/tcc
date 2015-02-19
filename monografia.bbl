@@ -1,0 +1,14 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.53 }
+
+\bibitem[Kennedy e Eberhart 1995]{kennedy1995particle}
+\abntrefinfo{Kennedy e Eberhart}{KENNEDY; EBERHART}{1995}
+{KENNEDY, J.; EBERHART, R. Particle swarm optimization. In:  IEEE. \emph{Neural
+  Networks, 1995. Proceedings., IEEE International Conference on}. [S.l.],
+  1995. v.~4, p. 1942--1948.}
+
+\end{thebibliography}

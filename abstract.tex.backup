@@ -1,0 +1,54 @@
+
+\begin{abstract}
+      Nowadays the meta heuristcs have been used for its simply of implementation
+      and for be able to be applied in a very large range of problems whith the most
+      levels of complexity. In this work, we have study the technique named Particle
+      Swarm Optimization (PSO). Which one, as occurs in the most of meta heuristcs, the
+      quality of application of this technique have to define some parameters that have
+      direct influence in the performance of algorithm, like the inertia weight that
+      prevent that the particle change its direction instatly, and the swarm learning
+      ability and its own. Those parameters was evaluted by a group of tests largely used
+      on literature and whith the goal of observe how the algorithm behave in each group
+      of parameters in diferents situations applied.
+
+      Furthermore, a larger study about the technique has been done evaluting algorithms
+      that adapt their parameters during the execution, thus searching a tool more effective
+      applied on diferents groups of problems. Algorithms that adapt the inertia weight,
+      for instance, generally allow that the particle keep more free in the opening
+      execution e became more restrective during the search.
+% 	Al\'em disso, um estudo mais amplo a respeito da t\'ecnica foi feito avaliando 
+% 	algoritmos que adaptam seus par\^ametros no decorrer da execu\c c\~ao, buscando 
+% 	assim uma ferramenta mais eficaz aplicada em diferentes classes de problemas. 
+% 	Algoritmos que adaptam a in\'ercia por expemplo, geralmente permitem que a 
+% 	part\'icula permanessa mais livre no in\'icio da execu\c c\~ao do programa e tornam-se 
+% 	mais restritivas com o decorrer da busca.
+
+	Particles on its turn, do not depend olny of the inertia wight to evolve. Its learning
+	is give by two parameters known as cognitive aceleration and social aceleration, which one,
+	define how much the particle is influenced by the swarm and how much she must search the 
+	best by	itself. (Thus, if implement more social, in other words, that give more importance
+	to the swarm learn, it can lead to failure of all group in case it is lost.) So, it is
+	clear that the definition of those parameters commits the final result of the technique.
+% 	
+% 	As part\'iculas por sua vez, n\~ao dependem aprenas da in\'ercia para evoluirem. Seu
+% 	aprendizado se da por dois par\^ametros conhecidos como acelera\c c\~ao cognitiva e 
+% 	aclera\c c\~ao social, que dizem o quanto uma part\'icula \'e influenciada para seguir o 
+% 	aprendizado do enxame e o quanto ela deve buscar por si pr\'opria o ponto \'otimo.
+% 	(Sendo assim, se uma execu\c c\~ao mais social, ou seja, que d\^e mais importancia para
+% 	o aprendizado do enxame, pode levar ao fracasso de todo o grupo caso ele se perca.)
+% 	Com isso, fica claro que a defini\c c\~ao desses par\^ametros compromete o resultado final da t\'ecnica.
+
+	Beyond those types of adaptation, still exist algorithms that updates in diferents ways
+	the particle's velocity, according with what those particles have learn, as well as
+	inclusion of new necessary parameters to control the adaptation.
+% 	
+% 	Al\'em desses tipos de adapta\c c\~ao, existem algoritimos que atualizam a 
+% 	velocidade das part\'iculas de maneiras diferentes de acordo com o que as 
+% 	part\'iculas aprenderam, bem como a inclus\~ao de novos par\^ametros necess\'arios 
+% 	ao controle da adapt\c c\~ao.
+
+	There fore, thiw work aims to evalute various proposals
+% 	Portanto, este trabalho visa avaliar diversas propostas em torno da defini\c c\~ao 
+% 	dos par\^ametros do PSO em um conjunto de problemas de otimiza\c c\~ao sem restri\c c\~oes, 
+% 	visando identificar as propostas mais adequadas para diferentes classes de problemas.
+\end{abstract}
