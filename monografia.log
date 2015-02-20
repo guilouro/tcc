@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.19)  20 FEB 2015 02:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.19)  20 FEB 2015 02:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,60 +475,60 @@ pdf>]
 
 
 ]
-(./monografia.toc [7
-
-])
+(./monografia.toc)
 \tf@toc=\write3
 \openout3 = `monografia.toc'.
 
- [8] (./monografia.lof)
+ [7
+
+] (./monografia.lof)
 \tf@lof=\write4
 \openout4 = `monografia.lof'.
 
- [9
+ [8
 
 
 ] (./monografia.lot)
 \tf@lot=\write5
 \openout5 = `monografia.lot'.
 
- [10
+ [9
 
 ]
 Cap\'{\i }tulo 1.
-[11
+[10
 
 ]
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 152.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 172.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 152.
- [12
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
+ [11
 
-] [13]
+] [12]
 Cap\'{\i }tulo 3.
-(./monografia.bbl [14
+(./monografia.bbl [13
 
 ])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[15
+[14
 
 ] (./monografia.aux (./abstract.aux) (./dedicatoria.aux)) ) 
 Here is how much of TeX's memory you used:
- 6452 strings out of 493308
- 91454 string characters out of 6137822
- 187048 words of memory out of 5000000
- 9754 multiletter control sequences out of 15000+600000
- 22707 words of font info for 65 fonts, out of 8000000 for 9000
+ 6415 strings out of 493308
+ 91000 string characters out of 6137822
+ 186875 words of memory out of 5000000
+ 9726 multiletter control sequences out of 15000+600000
+ 19938 words of font info for 56 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 44i,10n,42p,935b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,935b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/
 2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
@@ -542,10 +542,10 @@ st/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist
 onts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2013/texmf-dist/fon
 ts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts
 /type1/public/cm-super/sfti1200.pfb>
-Output written on monografia.pdf (17 pages, 240713 bytes).
+Output written on monografia.pdf (16 pages, 232380 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
