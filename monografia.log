@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.19)  20 FEB 2015 02:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.19)  20 FEB 2015 02:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,87 +511,41 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 ] [13]
 Cap\'{\i }tulo 3.
-[14
+(./monografia.bbl [14
 
-]
-Cap\'{\i }tulo 4.
-[15
-
-] [16]
-Cap\'{\i }tulo 5.
-[17
-
-] [18]
-Cap\'{\i }tulo 6.
-[19
-
-] [20] [21] [22]
-Cap\'{\i }tulo 7.
-[23
-
-]
-Cap\'{\i }tulo 8.
-
-Overfull \hbox (4.9712pt too wide) in paragraph at lines 475--491
- [][][][][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24
-
-] [25]
-Cap\'{\i }tulo 9.
-(./monografia.bbl [26
-
-]) [27
-
-]
-Anexo A.
+])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[28
+[15
 
 ] (./monografia.aux (./abstract.aux) (./dedicatoria.aux)) ) 
 Here is how much of TeX's memory you used:
- 6470 strings out of 493308
- 91735 string characters out of 6137822
- 194048 words of memory out of 5000000
- 9769 multiletter control sequences out of 15000+600000
- 27344 words of font info for 77 fonts, out of 8000000 for 9000
+ 6452 strings out of 493308
+ 91454 string characters out of 6137822
+ 187048 words of memory out of 5000000
+ 9754 multiletter control sequences out of 15000+600000
+ 22707 words of font info for 65 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 44i,11n,47p,935b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,935b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/
 2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sfbi1728.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/cm-super/sfbi2074.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/cm-super/sfbi2488.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
-blic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
-/cm-super/sfrm2488.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/c
-m-super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-
-super/sfti1200.pfb>
-Output written on monografia.pdf (30 pages, 429361 bytes).
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/cm-super/sfbi2488.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/cm-super/sfti1200.pfb>
+Output written on monografia.pdf (17 pages, 240713 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 111 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

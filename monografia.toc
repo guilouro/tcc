@@ -11,23 +11,4 @@
 \contentsline {subsection}{\numberline {3.1.2}Objetivo}{14}
 \contentsline {subsection}{\numberline {3.1.3}Caracter\IeC {\'\i }sticas}{14}
 \contentsline {subsection}{\numberline {3.1.4}Primeiros Passos}{14}
-\contentsline {chapter}{\numberline {4}Otimiza\c c\~ao}{15}
-\contentsline {section}{\numberline {4.1}Otimiza\c c\~ao}{15}
-\contentsline {section}{\numberline {4.2}M\'aximos e M\'inimos}{16}
-\contentsline {chapter}{\numberline {5}Metaheur\IeC {\'\i }stica}{17}
-\contentsline {section}{\numberline {5.1}Heur\IeC {\'\i }stica e Meta-Heur\IeC {\'\i }stica}{17}
-\contentsline {section}{\numberline {5.2}Problemas e Vantagens da Meta-Heur\IeC {\'\i }stica}{18}
-\contentsline {chapter}{\numberline {6}Otimiza\c c\~ao Por Enxame de Particulas}{19}
-\contentsline {section}{\numberline {6.1}\textit {Particle Swarm Optimization}}{19}
-\contentsline {section}{\numberline {6.2}\textit {Global Best Particle Swarm Optimization}}{20}
-\contentsline {section}{\numberline {6.3}\textit {Decreasing Weight Particle Swarm Optimization}}{20}
-\contentsline {section}{\numberline {6.4}Time-Varying Acceleration Coefficients PSO}{21}
-\contentsline {section}{\numberline {6.5}Fully Informed PSO}{21}
-\contentsline {chapter}{\numberline {7}Algoritmos e Modelo de Ilhas Paralelizadas}{23}
-\contentsline {section}{\numberline {7.1}Modelo de Ilhas Paralelizadas}{23}
-\contentsline {chapter}{\numberline {8}Experimentos Computacionais}{24}
-\contentsline {section}{\numberline {8.1}Experimentos}{24}
-\contentsline {chapter}{\numberline {9}Conclus\~oes e trabalhos futuros}{26}
-\contentsline {section}{\numberline {9.1}Conclus\~oes}{26}
-\contentsline {chapter}{Refer\^encias}{27}
-\contentsline {chapter}{Anexo{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramentas utilizadas}{28}
+\contentsline {chapter}{Refer\^encias}{15}
