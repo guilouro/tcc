@@ -111,51 +111,8 @@ professores: \setlength{\ABNTsignthickness}{0.4pt}
 
 
 \begin{resumo}
-	Atualmente o uso de meta-heur\'isticas
-	vem sendo utilizada por sua simplicidade de implemente\c c\~ao e por abranger uma vasta
-	gama de problemas com os mais diversos n\'iveis de complexidade.
-	Neste trabalho estudamos a t\'ecnica de otimiza\c c\~ao denominada Otimiza\c c\~ao por
-	Enxame de Part\'iculas, Particle Swarm Optimization (PSO).
-	A qual, assim como ocorre em grande parte das meta-heur\'isticas, a qualidade
-	de aplica\c c\~ao dessa t\'ecnica deve definir alguns par\^ametros que influ\^enciam
-	diretamente no desempenho do algoritmo, como a in\'ercia que impede que uma
-	part\'icula mude de dire\c c\~ao instantaneamente, e a capacidade de aprendizado
-	coletivo e individual da part\'icula. Esses par\^ametros foram avaliados por um
-	conjunto de testes amplamente utilizado na literatura e com o objetivo de
-	observar como o algoritmo se comporta com cada grupo de par\^ametro em diferentes
-	situa\c c\^oes a ele apresentado.
+	Devido a forma complexa em que se encontra o desenvolvimento de sistemas web atualmente, torna-se cada vez mais importante o uso de ferramentas que facilitam a criação dos mesmos. Essas ferramentas que denominaremos de \emph{Frameworks} são utilizadas visando o aumento de produtividade, esse aumento se deve as diversas ações que auxiliam nas principais atividades do desenvolvimento. Existe no mercado diversos \emph{Frameworks} web que são opensource. Porém o foco desse trabalho será baseado na criação de um \emph{Framework} próprio, onde foi escolhido um padrão de projeto, que será o modelo MVC, e uma linguagem de programação que será PHP. Serão apresentados cada passo dado para a criação do \emph{Framework} além de explicações técnicas referentes a cada funcionalidade do sistema, a documentação completa para uso do \emph{Framework} e algumas aplicações que já utilizam do \emph{Framework}.
 
-	Al\'em disso, um estudo mais amplo a respeito da t\'ecnica foi feito avaliando
-	algoritmos que adaptam seus par\^ametros no decorrer da execu\c c\~ao, buscando
-	assim uma ferramenta mais eficaz aplicada em diferentes classes de problemas.
-	Algoritmos que adaptam a in\'ercia por expemplo, geralmente permitem que a
-	part\'icula permanessa mais livre no in\'icio da execu\c c\~ao do programa e tornam-se
-	mais restritivas com o decorrer da busca.
-
-	As part\'iculas por sua vez, n\~ao dependem apenas da in\'ercia para evoluirem. Seu
-	aprendizado se da por dois par\^ametros conhecidos como acelera\c c\~ao cognitiva e
-	aclera\c c\~ao social, que dizem o quanto uma part\'icula \'e influenciada para seguir o
-	aprendizado do enxame e o quanto ela deve buscar por si pr\'opria o ponto \'otimo.
-	(Sendo assim, se uma execu\c c\~ao mais social, ou seja, que d\^e mais importancia para
-	o aprendizado do enxame, pode levar ao fracasso de todo o grupo caso ele se perca.)
-	Com isso, fica claro que a defini\c c\~ao desses par\^ametros compromete o resultado final da t\'ecnica.
-
-	Al\'em desses tipos de adapta\c c\~ao, existem algoritimos que atualizam a
-	velocidade das part\'iculas de maneiras diferentes de acordo com o que as
-	part\'iculas aprenderam, bem como a inclus\~ao de novos par\^ametros necess\'arios
-	ao controle da adapt\c c\~ao.
-
-% 	Um trabalho ainda mais elaborado foi o uso de uma técnica de otimização com algoritmos
-% 	híbridos paralelizados. O uso do hibridismo
-
-	Portanto, este trabalho visa avaliar diversas propostas em torno da defini\c c\~ao
-	dos par\^ametros do PSO em um conjunto de problemas de otimiza\c c\~ao sem restri\c c\~oes,
-	visando identificar as propostas mais adequadas para diferentes classes de problemas.
-
-	Este trabalho, além de avaliar os parâmetros do PSO, ainda faz o uso do PSO como mais
-	uma metaheurística em uma técnica de otimização hibrida, que procura aperfeiçoar
-	o processo de otimização fazendo o uso de mais de uma técnica. Pelo fato da busca ser demorada
-	utilizamos uma técnica de paralelização para diminuir o tempo de processo.
 \end{resumo}
 
 \include{abstract}
@@ -170,11 +127,91 @@ Agradeço a ...
 
 \listoftables
 
+
+
+
+
 \chapter{Introdução\label{cap:introducao}}
 
 % Introdução
 
 	Atualmente,
+
+
+%  A Importância de usar um framework
+
+\chapter{A import\^ancia de se usar um Framework\label{cap:importancia}}
+    Neste capítulo será apresentado, com dados técnicos, a importância do uso de um \emph{Framework} em projetos de desenvolvimento, detalhando algumas de suas vantagens e desvantagens no processo de codificação.
+
+    O \emph{framework} é, como princ\'ipio b\'asico, uma arquitetura "padrão" que tem como objetivo fornecer ferramentas comuns a todo tipo de projeto, utilizando os mais variados tipos de Design Pattern (Padrões de Projeto) afim de proporcionar um ambiente de desenvolvimento extremamente produtivo.
+
+    Grande parte dos \emph{frameworks} trabalham com um padrão principal denominado MVC (Model View Controller) que tem como base trabalhar com Modelo Lógico (Model), onde acontece toda a interação com a base de dados do projeto, Visualização (View), que é a parte responsável pela exibição de dados e o Controle (Controller), que é a regra de negócios do projeto, pode-se dizer que o Controller é responsável por fazendo toda a comunicação com o Model e tratar os dados para serem exibidos pela View, resumindo, o padrão MVC separa claramente o Design do Conteúdo e de sua Lógica.
+
+    \section{Vantagens em usar um Framework\label{sec:vantagens-framework}}
+        \begin{itemize}
+            \item \textbf{Padronização em projetos}: A grande vantagem de um \emph{framework} é sua padronização no desenvolvimento. Por utilizar um conjunto já definido de Classes e Métodos, a necesidade em trabalhar conforme a ferramenta possibilita ajuda a garantir um aproveitamento maior de código projetos futuros.
+
+            \item \textbf{Velocidade no desenvimento}: O fato de se fazer uso de módulos genéricos faz com que o \emph{framework} fique responsável por controlar o uso de funcionalidades repetitivas fazendo com que o desenvolvedor se concentre totalmente na regra de negócios de cada projeto.
+
+            \item \textbf{Qualidade}: \emph{Frameworks} em geral são testados e atualizados a todo momento, tornado cada vez mais seguro e com melhores funcionalidades.
+
+            \item \textbf{Re-uso de códigos}: A padronização de projetos torna capaz o re-uso de cógido sem dificuldades de adaptação.
+
+            \item \textbf{Segurança}: Uma das vantagens mais importantes é segurança que o \emph{framework} pode dar ao projeto.
+
+            \item \textbf{Fácil manutenção}: A separação do \emph{framework} utilizando padrões de projetos permite uma fácil manutenção em determinada ferramenta sem que afete outras.
+
+            \item \textbf{Utilitários e Bibliotecas}: Classes e métodos embutidos no \emph{framework}  afim de solucionar o problema de repetição contínua de códigos.
+        \end{itemize}
+
+    \section{Desvantagens em usar um Framework\label{sec:desvantagens-framework}}
+        Esses pontos não são necessariamente uma desvantagem, porém são os principais motivos pelo qual inibem o desenvolvedor de iniciar em um \emph{framework}.
+
+        \begin{itemize}
+            \item \textbf{Performance e peso}: A grande quantidade de arquivo e a chamada de métodos e criação de objetos nem sempre necessário para determinados projetos tornam a aplicação pesada em alguns casos.
+
+            \item \textbf{Curva de aprendizado}: Ao se trabalhar com códigos de terceiros existe uma curva de aprendizado elevada e que fica dependente de uma boa documentação para conseguir atingir um bom ritmo de trabalho.
+
+            \item \textbf{Conhecimento técnico}: É necessário que se tenha conhecimento em OOP (Programação Orientada à Objeto), boas práticas de programação e entenda padrões de projetos para poder utilizar o \emph{framework} da melhor forma.
+
+        \end{itemize}
+
+
+
+% Experimentos de Frameworks
+
+\chapter{Experimentos de Frameworks\label{cap:experimento}}
+
+    \section{Cake PHP\label{sec:cake-php}}
+        \subsection{Descricao da ferramenta\label{sub:descricao-cake}}
+
+            O CakePHP é um projeto de código aberto mantido por uma comunidade bastante ativa de desenvolvedores PHP. Possui uma estrutura extensível para desenvolvimento, manutenção e implantação de aplicativos. Utiliza o padrão de projeto MVC\emph{(Model-View-Controller)} e ORM\emph{(Object-relational mappring)} com os paradigmas das convenções sobre configurações.
+
+
+        \subsection{Objetivo\label{sub:objetivo-cake}}
+
+            CakePHP tem como objetivo principal a simplificação do processo de desenvolvimento e construção de aplicações web, utilizando um núcleo onde organiza o banco de dados e alguns recursos que reduzem a codificação pelo desenvolvedor. Alguns desses recursos são a validação embutida, ACLs \emph{(lista de controle de acesso)}, segurança, manipulação de sessão e cache de Views e sanitização de dados.
+
+
+        \subsection{Características\label{sub:caracteristicas-cake}}
+
+
+        \subsection{Primeiros Passos\label{sub:primeiros-passos-cake}}
+
+
+
+
+
+
+
+
+
+
+
+
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 \chapter{Otimização\label{cap:otimizacao}}
 	  Este caítulo descreve um pouco sobre otimização, o qual é o centro da base
@@ -214,7 +251,6 @@ Agradeço a ...
 		  \textit{conjunto factível}.
 
 	\section{M\'aximos e M\'inimos}
-
 
 
 

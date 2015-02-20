@@ -1,7 +1,7 @@
 \select@language {brazil}
-\contentsline {table}{\numberline {1}{\ignorespaces Conjuntos de configura\c c\~oes para os algoritmo do PSO sem adapta\c c\~ao.\relax }}{21}
-\contentsline {subtable}{\numberline {(a)}{\ignorespaces {Configura\c c\~oes para o PSO}}}{21}
-\contentsline {subtable}{\numberline {(b)}{\ignorespaces {Configura\c c\~oes para o GBPSO}}}{21}
-\contentsline {table}{\numberline {2}{\ignorespaces Conjuntos de configura\c c\~oes para os algoritmo do PSO adaptativos.\relax }}{22}
-\contentsline {subtable}{\numberline {(a)}{\ignorespaces {Configura\c c\~oes para o DWPSO}}}{22}
-\contentsline {subtable}{\numberline {(b)}{\ignorespaces {Configura\c c\~oes para o TVACPSO}}}{22}
+\contentsline {table}{\numberline {1}{\ignorespaces Conjuntos de configura\c c\~oes para os algoritmo do PSO sem adapta\c c\~ao.\relax }}{24}
+\contentsline {subtable}{\numberline {(a)}{\ignorespaces {Configura\c c\~oes para o PSO}}}{24}
+\contentsline {subtable}{\numberline {(b)}{\ignorespaces {Configura\c c\~oes para o GBPSO}}}{24}
+\contentsline {table}{\numberline {2}{\ignorespaces Conjuntos de configura\c c\~oes para os algoritmo do PSO adaptativos.\relax }}{25}
+\contentsline {subtable}{\numberline {(a)}{\ignorespaces {Configura\c c\~oes para o DWPSO}}}{25}
+\contentsline {subtable}{\numberline {(b)}{\ignorespaces {Configura\c c\~oes para o TVACPSO}}}{25}
