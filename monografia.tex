@@ -15,6 +15,9 @@
 \usepackage{subfig}
 \usepackage{subfloat}
 
+% Define o caminho das figuras
+\graphicspath{{figuras/}}
+
 %Nomes dos membros da banca
 \newcommand{\bancaPrimeiroNome}{Nome do membro da banca}
 \newcommand{\bancaPrimeiroInstituicao}{Intituição do Membro}
@@ -148,7 +151,9 @@ professores: \setlength{\ABNTsignthickness}{0.4pt}
 
 
 
-\tableofcontents{}\listoffigures
+\tableofcontents
+
+\listoffigures
 
 \listoftables
 
@@ -188,14 +193,41 @@ professores: \setlength{\ABNTsignthickness}{0.4pt}
 \chapter{Métodos e materiais\label{cap:metodos-materiais}}
     Com o intuito de apresentar todo o processo de criação e utilização das ferramentas e funcionalidades do \emph{Framework Lotus\{PHP\}}, neste capítulo serão apresentados e descritos os elementos e métodos utilizados para o desenvolvimento e funcionamento do \emph{Framework}.
 
-    \section{POO\label{sec:poo}}
+    \section{POO \emph{(Programação Orientada a Objetos)}\label{sec:poo}}
+        Programação Orientada a Objetos é um padrão de desenvolvimento com um conjunto de ideias, conceitos e princípios utilizados para facilitar e organizar melhor o desenvolvimento de aplicações. Tem como principais caracteristicas facilitar a manutenção de códigos, utilizar com frequencia o reaproveitamento de códigos além de dimuniur a complexidade no desenvolvimento de sistemas.
+
+
+        \subsection{Principais conceitos de POO\label{sub:principais-conceitos}}
+            \begin{itemize}
+                \item \textbf{Abstração}: Utilizada para a definição de entidades do mundo real.
+                        \begin{figure}[!htb]
+                            \centering
+                            \includegraphics{abstracao.jpg}
+                            \caption{Abstração do mundo real.}
+                            \label{cap:heranca}
+                        \end{figure}
+                \item \textbf{Classes}: Definição dada para a estrutura de um objeto, onde são definidas os atributos e métodos referentes a cada objeto.
+                \item \textbf{Objetos}: É a instância de uma classe. Um objeto é a construção de software que encapsula estado e comportamento nos permitindo modelar a aplicação em termos reais e abstrações.
+                \item \textbf{Herança}: É a possibilidade de uma classe \emph{(subclasse)} herdar métodos e atributos de outra classe \emph{(superclasse)}
+                        \begin{figure}[!htb]
+                            \centering
+                            \includegraphics{heranca.jpg}
+                            \caption{Hieraquia de classes}
+                            \label{cap:heranca}
+                        \end{figure}
+                \item \textbf{Polimorfismo}: Se trata da capacidade de um método ou comportamento da \emph{superclass} ser implementado de diversas maneiras nas \emph{subclasses}.
+                \item \textbf{Encapsulamento}: Forma de proteção dos atributos de uma classe, não permitindo que este seja acessado diretamente.
+
+            \end{itemize}
+
+
 
     \section{MVC\label{sec:mvc}}
 
     \section{CRUD\label{sec:crud}}
 
     \section{PHP\label{sec:php}}
-      O PHP (\emph{um acrônimo recursivo para PHP: Hypertext Preprocessor}) é uma linguagem de script open source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.i(Php.net,2015). 
+      O PHP (\emph{um acrônimo recursivo para PHP: Hypertext Preprocessor}) é uma linguagem de script open source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.i(Php.net,2015).
 
       O PHP contém um HTML com código embutidos que permite unir linguagem de marcação a códigos extremamentes dinâmicos utilizando as tags '\emph{<?php}' e '\emph{?>}' que separam o \emph{HTML} do \emph{PHP}.
 
