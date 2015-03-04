@@ -193,6 +193,14 @@ professores: \setlength{\ABNTsignthickness}{0.4pt}
 \chapter{Métodos e materiais\label{cap:metodos-materiais}}
     Com o intuito de apresentar todo o processo de criação e utilização das ferramentas e funcionalidades do \emph{Framework Lotus\{PHP\}}, neste capítulo serão apresentados e descritos os elementos e métodos utilizados para o desenvolvimento e funcionamento do \emph{Framework}.
 
+    \section{PHP\label{sec:php}}
+      O PHP (\emph{um acrônimo recursivo para PHP: Hypertext Preprocessor}) é uma linguagem de script open source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.i(Php.net,2015).
+
+      O PHP contém um HTML com código embutidos que permite unir linguagem de marcação a códigos extremamentes dinâmicos utilizando as tags '\emph{<?php}' e '\emph{?>}' que separam o \emph{HTML} do \emph{PHP}.
+
+      É uma linguagem server-side (\emph{lado do servidor}) e tem seu código executado diretamente no servidor, retornando somente o HTML que será exibido para o cliente, omitindo o acesso ao código PHP da aplicação.
+
+
     \section{POO \emph{(Programação Orientada a Objetos)}\label{sec:poo}}
         Programação Orientada a Objetos é um padrão de desenvolvimento com um conjunto de ideias, conceitos e princípios utilizados para facilitar e organizar melhor o desenvolvimento de aplicações. Tem como principais caracteristicas facilitar a manutenção de códigos, utilizar com frequencia o reaproveitamento de códigos além de dimuniur a complexidade no desenvolvimento de sistemas.
 
@@ -204,7 +212,7 @@ professores: \setlength{\ABNTsignthickness}{0.4pt}
                             \centering
                             \includegraphics{abstracao.jpg}
                             \caption{Abstração do mundo real.}
-                            \label{cap:heranca}
+                            \label{cap:conceitos}
                         \end{figure}
                 \item \textbf{Classes}: Definição dada para a estrutura de um objeto, onde são definidas os atributos e métodos referentes a cada objeto.
                 \item \textbf{Objetos}: É a instância de uma classe. Um objeto é a construção de software que encapsula estado e comportamento nos permitindo modelar a aplicação em termos reais e abstrações.
@@ -221,17 +229,23 @@ professores: \setlength{\ABNTsignthickness}{0.4pt}
             \end{itemize}
 
 
+    \section{MVC \emph{(Model, View e Controller)} \label{sec:mvc}}
+        O MVC é um Design Pattern \emph{(Padrão de projeto)} utilizado para separar as camadas de modelo, visão e controle no desenvolvimento de um sistema. A camada de modelo \emph{(Model)} contém classes que implementam a regra de negócios da aplicação, já a camada de visão \emph{(View)}, por sua vez, são responsáveis pela exibição e apresentação dos dados para o usuário, e por fim a camada de controle \emph{(Controller)}, onde é processado todas as requisições realizadas pelo usuários.
 
-    \section{MVC\label{sec:mvc}}
+        A separação da aplicação em camadas, como é feita no padrão MVC, trás uma série de vantagens no processo de desenvolvimento, uma delas é a de permitir a reutilização do mesmo objeto de modelo em visualizações distintas, além de organizar seu projeto de forma onde tudo tenha seu lugar, e cada camada com sua responsabilidade, permitindo um trabalho muitos mais "centrado" e modularizado.
 
-    \section{CRUD\label{sec:crud}}
 
-    \section{PHP\label{sec:php}}
-      O PHP (\emph{um acrônimo recursivo para PHP: Hypertext Preprocessor}) é uma linguagem de script open source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.i(Php.net,2015).
+    \section{CRUD \emph{(Create, Read, Update e Delete)}\label{sec:crud}}
+        CRUD é o acrônimo da expressão do idioma inglês, \emph{Create Read Update and Delete} e é utilizado para designar as quarto operaçõs básicas de um banco de dados: Criar, Ler, Atualizar e Deletar.
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics{crud.jpg}
+            \caption{Execução de uma requisição CRUD}
+            \label{cap:crud}
+        \end{figure}
 
-      O PHP contém um HTML com código embutidos que permite unir linguagem de marcação a códigos extremamentes dinâmicos utilizando as tags '\emph{<?php}' e '\emph{?>}' que separam o \emph{HTML} do \emph{PHP}.
+        Tratando como uma forma mais técnica o CRUD se transforma em um facilitador, criado através de diretivas de programação, para ações ligadas ao \emph{INSERT}, \emph{UPDATE}, \emph{DELETE} e \emph{SELECT} do banco de dados.
 
-      É uma linguagem server-side (\emph{lado do servidor}) e tem seu código executado diretamente no servidor, retornando somente o HTML que será exibido para o cliente, omitindo o acesso ao código PHP da aplicação.
 
 
     \section{UML\label{sec:uml}}
