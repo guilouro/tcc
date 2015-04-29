@@ -1,0 +1,461 @@
+%% LyX 1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil,ruledheader, a4paper]{abnt}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm,amsfonts}
+\usepackage{graphicx,color}
+\usepackage{amsthm}
+\usepackage[noend, ruled, linesnumbered]{algorithm2e}
+\usepackage{subfig}
+\usepackage{subfloat}
+
+% Define o caminho das figuras
+\graphicspath{{figuras/}}
+
+%Nomes dos membros da banca
+\newcommand{\bancaPrimeiroNome}{Nome do membro da banca}
+\newcommand{\bancaPrimeiroInstituicao}{Intituição do Membro}
+\newcommand{\bancaSegundoNome}{Nome do membro da banca}
+\newcommand{\bancaSegundoInstituicao}{Intituição do Membro}
+
+\input{common}
+
+\makeatletter
+\usepackage{babel}
+\makeatother
+\begin{document}
+
+%Nome do aluno
+\autor{Guilherme Peixoto da Costa Louro}
+
+%titulo do trabalho
+\titulo{Framework MVC - Lothus\{PHP\} }
+
+%orientado
+\orientador{Matheus Bandini}
+
+%coorientador
+\coorientador{Lorem ipsum}
+
+\comentario{Trabalho apresentado no curso de Formação em
+Tecnologia da Informação e Comunicação da FAETERJ -- Petrópolis
+como requisito parcial para obtenção do grau de tecnólogo.}
+
+
+\instituicao{Faculdade de Educação Tecnológica do Estado do Rio de Janeiro}
+
+
+\local{Petrópolis -- RJ}
+
+
+\data{Julho de 2015}
+
+%Criando a capa com estilo diferente do \capa no ABNTEX
+\begin{titlepage}
+    \begin{center}
+		\centering
+		\includegraphics[width=2.0cm]{logo.pdf}\\
+        {\textbf{GOVERNO DO ESTADO DO RIO DE JANEIRO\\
+	        SECRETARIA DE ESTADO DE CIÊNCIA E TECNOLOGIA\\
+		FUNDAÇÃO DE APOIO À ESCOLA TÉCNICA\\
+		CENTRO DE EDUCAÇÃO TECNOLÓGICA DO ESTADO DO RIO DE JANEIRO\\
+		FACULDADE DE EDUCAÇÃO TECNOLÓGICA DO ESTADO DO RIO DE JANEIRO\\
+		FAETERJ/PETRÓPOLIS}
+	} \\ [4.9cm]
+        {\Huge \ABNTtitulodata} \\[4.9cm]
+        \vfill
+        {\large \textbf{\ABNTautordata}} \\[4.9cm]
+        {\large PETRÓPOLIS} \\
+        {\large \ABNTdatadata}
+    \end{center}
+\end{titlepage}
+%fim da capa
+
+% Folha de rosto sem o uso de \folhaderosto
+\begin{titlepage}
+    \begin{center}
+%        {\large \ABNTtitulodata} \\
+%        {\large \ABNTautordata} \\[3.3cm]
+        {\Huge \ABNTtitulodata} \\[3.3cm]
+        {\large \ABNTautordata} \\[3.3cm]
+        \hspace{.45\textwidth} % posicionando a minipage
+        \begin{minipage}{.5\textwidth}
+            \begin{espacosimples}
+                Trabalho apresentado no curso de Formação em
+		Tecnologia da Informação e Comunicação da FAETERJ --
+		Petrópolis como requisito parcial para
+		obtenção do grau de tecnólogo.
+            \end{espacosimples}
+        \end{minipage}
+\end{center}
+Orientador: \ABNTorientadordata \\ Co-orientador: Lorem ipsum
+\begin{center}
+        \vfill
+        {\large PETRÓPOLIS} \\
+        {\large \ABNTdatadata}
+    \end{center}
+\end{titlepage}
+
+
+\begin{folhadeaprovacao}
+Monografia de Projeto Final de Graduação sob o título \textit{``\ABNTtitulodata''},
+defendida por \ABNTautordata~e aprovada em \ABNTdatadata, em Petrópolis,
+Estado do Rio de Janeiro, pela banca examinadora constituída pelos
+professores: \setlength{\ABNTsignthickness}{0.4pt}
+
+\assinatura{\orientador\\ Orientador} \assinatura{\coorientador\\ Co-orientador} \assinatura{\bancaPrimeiroNome\\ \bancaPrimeiroInstituicao} \assinatura{\bancaSegundoNome\\ \bancaPrimeiroInstituicao}
+\end{folhadeaprovacao}
+
+
+% Resumo
+
+\begin{resumo}
+
+    O mercado atual proporciona ao desenvolvedor diversas ferramentas, capazes de possibilitar a criação de sistemas de forma ágil e automatizada. Contudo, ferramentas como essas, dependem de um estudo baseado em suas documentações a fim de se produzir um sistema de forma correta, sem fugir das determinações exigidas pela ferramenta utilizada. Esse processo, na maioria dos casos, exigem um certo tempo para o entendimento de todas as funcionalidades e métodos possíveis de serem usados, fazendo com que alguns desenvenvolvedores acabe testando outras ferramentas sem se especializar em nenhuma delas.
+
+    A proposta do projeto, apresentado neste documento, é de um framework capaz de suprir as necessidades mais importantes no desenvolvimento de um site ou sistema web. De forma simples e sem a complexidade de ferramentas que já existem no mercado, o \emph{Framework Lothus\{PHP\}} busca atender todos os niveis de desenvolvedores, principalmente por ter uma curta curva de aprendizagem.
+
+    O \emph{Framework Lothus\{PHP\}} utiliza MVC \emph{(Model, View, Controller)} como padrão de projetos e foi produzido de forma à atender desenvolvedores FrontEnd e BackEnd, trazendo uma estrutura de pastas que separa cada etapa do processo de desenvolvimento.
+
+    Será detalhado todo o processo de desenvolvimento do \emph{Framework}, mostrando todas as diretrizes e funcionalidades de cada etapa da criação do mesmo. Este detalhamente será apresentado com explicações sobre arquivos e trechos de códigos pertencentes ao \emph{Framework}, passando de forma transparente o funcionamento de cada etapa.
+
+    Ao detalhar todo o processo de criação do \emph{Lothus \{PHP\}}, será descrito todas as ferramentas e tecnologias usadas para auxiliar o desenvolvimento capaz de tornar ágil futuras aplicações produzidas através do \emph{Framework}.
+
+    Por fim será apresentado a criação de um pequeno projeto usando algumas técnicas do \emph{Framework Lothus\{PHP\}} através de um passo-a-passo capaz de deixar claro o quanto ele pode agilizar o processo de desenvolvimento de uma forma facil e equilibrada. Além disso será apresentado alguns sistemas feitos usando o \emph{Framework}.
+
+\end{resumo}
+
+\include{abstract}
+
+
+
+
+
+
+
+
+% Dedicatória
+
+\chapter*{Dedicatória\label{cap:dedicatoria}}
+    Dedico esse trabalho a membros de minha família e amigos, principalmente a minha noiva por estar ao meu lado a todo momento me apoiando, mesmo nos momentos mais difíceis, nessa caminhada de dois anos e meio de faculdade e mais dois anos entre a criação do projeto e algumas pausas por motivos pessoais.
+
+    Gostaria de agradecer também aos que foram importantes em minha vida, me apoiando e motivando desde a escolha da faculdade até seus momentos finais.
+
+    Não podendo deixar de dedicar o trabalho aos companheiros de classe que viveram comigo os momentos fáceis e os mais complicados de toda a trajetória do curso, sem esquecer os que, de algum lugar, me mandou energia e motivação para a conclusão deste trabalho.
+
+
+
+
+
+
+
+
+% Agradecimentos
+
+\chapter*{Agradecimentos\label{cap:agradecimentos}}
+
+    Ao meu orientador, professores e companheiros de trabalhor que se envolveram no desenvolvimento deste trabalho e deste projeto. Em especial agradeço a minha família e a minha noiva pela motivação e compreensão em momento dificeis e de ausência de minha parte em resultado à dedicação dada a este projeto.
+
+
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+
+
+
+
+
+
+
+% Introdução
+
+\chapter{Introdução\label{cap:introducao}}
+    Devido à grande necessidade de entregar projetos de grande porte e com prazos consideravelmente baixos, foi percebida a necessidade de se encontrar soluções que facilitassem esse desenvolvimento.
+
+    A primeira atitude a ser tomada foi a criação de um arquivo que reunia diversas funcionalidades, afim de facilitar futuros projetos, onde processos que se repetiam diversas vezes eram colocados em funções que poderiam ser usadas em novos projetos.
+
+    Aplicações em geral precisam de um padrão mais significativo como forma estrutural de um projeto, deixando claro que a criação de um arquivo contendo todas as funções do projeto não era o melhor padrão a ser seguido. Este trabalho apresenta, como uma de suas justificativas, uma pesquisa profunda que reune novos padrões para os processos e \emph{Frameworks} web que poderiam ser mais úteis para um desenvolvimento ágil.
+
+    No final dessas pesquisas iniciais, alguns \emph{Frameworks} foram testados e o CakePHP passou a ser usado como padrão. O CakePHP utiliza o padrão de projeto MVC \emph{(Model, View, Controller)} que é um modelo de arquitetura de software que tem como objetivo básico separar a lógica de negócio da aplicação.
+
+    Os \emph{Frameworks} são sempre muito robustos e com diversos tipos de funcionalidades, e com o CakePHP não é diferente. Com uma vasta documentação e uma quantidade considerável de arquivos em seu projeto mais simples, este passou a ser um problema ao invés de solução quando se busca um total domínio em uma aplicação.
+
+    Percebeu-se então a real necessidade de criar um Framework onde se tenha total controle de todas as funcionalidades, mantendo o padrão MVC, porém criando as próprias funcionalidades, mesmo que baseado em funcionalidades de outros \emph{Frameworks}.
+
+    Identificar o problema foi o primeiro e principal passo para se iniciar o desenvolvimento do Framework, que se encontra sempre em evolução com novas implementações que resolvam determinados problemas.
+
+
+
+
+%  A Importância de usar um framework
+
+\chapter{A import\^ancia de se usar Framework\label{cap:importancia}}
+    Neste capítulo será apresentado, com dados técnicos, a importância do uso de um \emph{Framework} em projetos de desenvolvimento, detalhando algumas de suas vantagens e desvantagens no processo de codificação.
+
+    O \emph{framework} é, como princ\'ipio b\'asico, uma arquitetura "padrão" que tem como objetivo fornecer ferramentas comuns a todo tipo de projeto, utilizando os mais variados tipos de Design Pattern (Padrões de Projeto) afim de proporcionar um ambiente de desenvolvimento extremamente produtivo.
+
+    Grande parte dos \emph{frameworks} trabalham com um padrão principal denominado MVC (Model View Controller) que tem como base trabalhar com Modelo Lógico (Model), onde acontece toda a interação com a base de dados do projeto, Visualização (View), que é a parte responsável pela exibição de dados e o Controle (Controller), que é a regra de negócios do projeto, pode-se dizer que o Controller é responsável por fazendo toda a comunicação com o Model e tratar os dados para serem exibidos pela View, resumindo, o padrão MVC separa claramente o Design do Conteúdo e de sua Lógica.
+
+    \section{Vantagens em usar um Framework\label{sec:vantagens-framework}}
+        \begin{itemize}
+            \item \textbf{Padronização em projetos}: A grande vantagem de um \emph{framework} é sua padronização no desenvolvimento. Por utilizar um conjunto já definido de Classes e Métodos, a necesidade em trabalhar conforme a ferramenta possibilita ajuda a garantir um aproveitamento maior de código projetos futuros.
+
+            \item \textbf{Velocidade no desenvimento}: O fato de se fazer uso de módulos genéricos faz com que o \emph{framework} fique responsável por controlar o uso de funcionalidades repetitivas fazendo com que o desenvolvedor se concentre totalmente na regra de negócios de cada projeto.
+
+            \item \textbf{Qualidade}: \emph{Frameworks} em geral são testados e atualizados a todo momento, tornado cada vez mais seguro e com melhores funcionalidades.
+
+            \item \textbf{Re-uso de códigos}: A padronização de projetos torna capaz o re-uso de cógido sem dificuldades de adaptação.
+
+            \item \textbf{Segurança}: Uma das vantagens mais importantes é segurança que o \emph{framework} pode dar ao projeto.
+
+            \item \textbf{Fácil manutenção}: A separação do \emph{framework} utilizando padrões de projetos permite uma fácil manutenção em determinada ferramenta sem que afete outras.
+
+            \item \textbf{Utilitários e Bibliotecas}: Classes e métodos embutidos no \emph{framework}  afim de solucionar o problema de repetição contínua de códigos.
+        \end{itemize}
+
+    \section{Desvantagens em usar um Framework\label{sec:desvantagens-framework}}
+        Esses pontos não são necessariamente uma desvantagem, porém são os principais motivos pelo qual inibem o desenvolvedor de iniciar em um \emph{framework}.
+
+        \begin{itemize}
+            \item \textbf{Performance e peso}: A grande quantidade de arquivo e a chamada de métodos e criação de objetos nem sempre necessário para determinados projetos tornam a aplicação pesada em alguns casos.
+
+            \item \textbf{Curva de aprendizado}: Ao se trabalhar com códigos de terceiros existe uma curva de aprendizado elevada e que fica dependente de uma boa documentação para conseguir atingir um bom ritmo de trabalho.
+
+            \item \textbf{Conhecimento técnico}: É necessário que se tenha conhecimento em OOP (Programação Orientada à Objeto), boas práticas de programação e entenda padrões de projetos para poder utilizar o \emph{framework} da melhor forma.
+
+        \end{itemize}
+
+
+
+% Estrutura do Framework
+
+\chapter{Estrutura e funcionamento do Framework\label{cap:detalhamento-projeto}}
+
+    \section{Processo de instalação\label{sec:processo-instalacao}}
+        O \emph{Framework Lothus\{PHP\}} permite ao desenvolvedor a possibilidade de escolha entrei dois níves para a aplicação. O primeiro nível permite a instalação do \emph{Framework} da forma mais simples, instalando utilitário que foca em um desenvolvimento direcionado ao backend do projeto, integrando facilidade com a troca de informações com o banco de dados, desenvolvimento através do MVC, URLs amigáves entre outras funcionalidades descritas ao longo deste trabalho.
+
+        Essa instalação é feita através do repositório remoto chamado \emph{Github}, que se encontra no seguinte endereço online:
+
+        \emph{https://github.com/guilouro/FRAMEWORK-PHP}
+
+
+
+
+    \section{Estrutura de pastas\label{sec:estrutura-pastas}}
+
+    \section{Divisão Backend - frontend\label{sec:back-front}}
+
+        \subsection{Comandos do Grunt\label{sub:comandos-grunt}}
+
+    \section{System\label{sec:estrutura-pastas}}
+
+    \section{Model\label{sec:estrutura-pastas}}
+
+    \section{View\label{sec:estrutura-pastas}}
+
+    \section{View\label{sec:estrutura-pastas}}
+
+    \section{Template\label{sec:estrutura-pastas}}
+
+
+
+% Métodos e materiais
+
+\chapter{Métodos e materiais\label{cap:metodos-materiais}}
+    Com o intuito de apresentar todo o processo de criação e utilização das ferramentas e funcionalidades do \emph{Framework Lothus\{PHP\}}, neste capítulo serão apresentados e descritos os elementos e métodos utilizados para o desenvolvimento e funcionamento do \emph{Framework}.
+
+    \section{PHP\label{sec:php}}
+      O PHP (\emph{um acrônimo recursivo para PHP: Hypertext Preprocessor}) é uma linguagem de script open source de uso geral, muito utilizada, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.i(Php.net,2015).
+
+      O PHP contém um HTML com código embutidos que permite unir linguagem de marcação a códigos extremamentes dinâmicos utilizando as tags '\emph{<?php}' e '\emph{?>}' que separam o \emph{HTML} do \emph{PHP}.
+
+      É uma linguagem server-side (\emph{lado do servidor}) e tem seu código executado diretamente no servidor, retornando somente o HTML que será exibido para o cliente, omitindo o acesso ao código PHP da aplicação.
+
+
+    \section{POO \emph{(Programação Orientada a Objetos)}\label{sec:poo}}
+        Programação Orientada a Objetos é um padrão de desenvolvimento com um conjunto de ideias, conceitos e princípios utilizados para facilitar e organizar melhor o desenvolvimento de aplicações. Tem como principais caracteristicas facilitar a manutenção de códigos, utilizar com frequencia o reaproveitamento de códigos além de dimuniur a complexidade no desenvolvimento de sistemas.
+
+
+        \subsection{Principais conceitos de POO\label{sub:principais-conceitos}}
+            \begin{itemize}
+                \item \textbf{Abstração}: Utilizada para a definição de entidades do mundo real.
+                        \begin{figure}[!htb]
+                            \centering
+                            \includegraphics{abstracao.jpg}
+                            \caption{Abstração do mundo real.}
+                            \label{cap:conceitos}
+                        \end{figure}
+                \item \textbf{Classes}: Definição dada para a estrutura de um objeto, onde são definidas os atributos e métodos referentes a cada objeto.
+                \item \textbf{Objetos}: É a instância de uma classe. Um objeto é a construção de software que encapsula estado e comportamento nos permitindo modelar a aplicação em termos reais e abstrações.
+                \item \textbf{Herança}: É a possibilidade de uma classe \emph{(subclasse)} herdar métodos e atributos de outra classe \emph{(superclasse)}
+                        \begin{figure}[!htb]
+                            \centering
+                            \includegraphics{heranca.jpg}
+                            \caption{Hieraquia de classes}
+                            \label{cap:heranca}
+                        \end{figure}
+                \item \textbf{Polimorfismo}: Se trata da capacidade de um método ou comportamento da \emph{superclass} ser implementado de diversas maneiras nas \emph{subclasses}.
+                \item \textbf{Encapsulamento}: Forma de proteção dos atributos de uma classe, não permitindo que este seja acessado diretamente.
+
+            \end{itemize}
+
+
+    \section{MVC \emph{(Model, View e Controller)} \label{sec:mvc}}
+        O MVC é um Design Pattern \emph{(Padrão de projeto)} utilizado para separar as camadas de modelo, visão e controle no desenvolvimento de um sistema. A camada de modelo \emph{(Model)} contém classes que implementam a regra de negócios da aplicação, já a camada de visão \emph{(View)}, por sua vez, são responsáveis pela exibição e apresentação dos dados para o usuário, e por fim a camada de controle \emph{(Controller)}, onde é processado todas as requisições realizadas pelo usuários.
+
+        A separação da aplicação em camadas, como é feita no padrão MVC, trás uma série de vantagens no processo de desenvolvimento, uma delas é a de permitir a reutilização do mesmo objeto de modelo em visualizações distintas, além de organizar seu projeto de forma onde tudo tenha seu lugar, e cada camada com sua responsabilidade, permitindo um trabalho muitos mais "centrado" e modularizado.
+
+
+    \section{CRUD \emph{(Create, Read, Update e Delete)}\label{sec:crud}}
+        CRUD é o acrônimo da expressão do idioma inglês, \emph{Create Read Update and Delete} e é utilizado para designar as quarto operaçõs básicas de um banco de dados: Criar, Ler, Atualizar e Deletar.
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics{crud.jpg}
+            \caption{Execução de uma requisição CRUD}
+            \label{cap:crud}
+        \end{figure}
+
+        Tratando como uma forma mais técnica o CRUD se transforma em um facilitador, criado através de diretivas de programação, para ações ligadas ao \emph{INSERT}, \emph{UPDATE}, \emph{DELETE} e \emph{SELECT} do banco de dados.
+
+
+
+    \section{UML\label{sec:uml}}
+        UML \emph{(Unified Modeling Language)}, é uma linguagem de modelagem possibilita o desenvolvimento de diagramas de classes, de objetos, casos de uso, entre outros. Esses diagramas são uteis para o desenvolvimento e um grande facilitador para o entendimento de um projeto e sua estrutura.
+
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics{uml.jpg}
+            \caption{Exemplo de um diagrama UML.}
+            \label{cap:uml}
+        \end{figure}
+
+
+    \section{Mysql\label{sec:mysql}}
+        O MySQL é um gerenciador de banco de dados de código aberto, capaz de atender às necessidades dos mais variados tipos de usuários. Este produto tem uma gama diversificada de possibilidades de uso, algumas delas são soluções em desenvolvimento de sistemas, provedores, aplicações livres entre outras.
+
+    \section{PDO\label{sec:pdo}}
+        PDO \emph{(PHP Data Objects)} é um módulo de PHP montado sob o paradigma Orientado a Objetos e cujo objetivo é prover uma padronização da forma com que PHP se comunica com um banco de dados relacional. Este módulo surgiu a partir da versão 5 de PHP. PDO, portanto, é uma interface que define um conjunto de classes e a assinatura dos métodos de comunicação com uma base de dados. (LOCAWEB, 2015)
+
+    \section{HTML\label{sec:hmtl}}
+        HTML \emph{(Hyper Text Markup Language)}, como o próprio nome já diz, trata-se de uma linguagem de marcação de hipertexto utilizada no desenvolvimento de páginas web. Ela nos possibilita estruturar uma página através de marcações e tags específicas permitindo que a mesma seja acessada pela internet.
+
+    \section{Node.js\label{sec:node-js}}
+        \emph{Node.js} é uma plataforma constuida sobre o motor de Javascript que tem como principal objetivo fornecer uma maneira fácil de se construir programas de rede escaláveis. Mesmo sendo um servidor de programas não podemos confundi-lo com um servidor \emph{ready-to-install}(prontos para instalar), que são servidores que estão prontos para instalar aplicativos instantâneamente. O \emph{Node.js} segue o conceito de módulos que podem ser adicionados em seu núcleo. Há literalmente centenas de módulos para rodarem com o Node, e a comunidade é bastante ativa em produzir, publicar e atualizar dezenas de módulos por dia.
+
+    \section{Automatizador Grunt\label{sec:automatizador-grunt}}
+        \emph{Grunt} é uma ferramenta que roda via termina e serve para automatizar tarefas de uma aplicação,  como: concatenação, minificação e validação de arquivos, otimização de imagem, testes unitários, deploy de arquivos por ftp ou rsync, entre outras. O \emph{Grunt} é feito totalmente em \emph{Javascript} e roda no \emph{Node.js}, portanto para ser utilizado, depende da instalação do \emph{Node.js} e do pacote \emph{NPM} previamente instalados.
+
+    \section{Sass\label{sec:sass}}
+        É um pre-processador de folhas de estilo feito em \emph{Ruby} e responsável em auxiliar na produtividade de códigos \emph{CSS}. Literalmente falando, \emph{Sass} é uma extensão do \emph{CSS} que adiciona potência e elegância à linguagem básica. Ele permite ao desenvolvedor o uso de variáveis, mixins, importações, ampla organização do código, entre outras funcionalidade totalmentes compatíveis com \emph{CSS}. \emph{Sass} trabalha com dois tipos de \emph{sintax} diferentes, \emph{.sass} e \emph{.scss} e suas particularidas são: enquanto no arquivo \emph{.scss} são utilizados chaves \emph{"\{\}"} e ponto e vírgula \emph{";"} para delimitar o inicio e fim de atributos e valores, no \emph{.sass} essa delimitação é feita apenas por identação. Para ser utilizado em uma aplicação em produção utilizamos o arquivo \emph{CSS} gerado através da compilação do arquivo \emph{.sass} ou \emph{.scss}.
+
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics{sass.jpg}
+            \caption{Compilação de um arquivo sass para css}
+            \label{cap:sass}
+        \end{figure}
+
+
+    \section{Uglify\label{sec:uglify}}
+        É um modulo que funciona em \emph{NodeJs} responsável pela minificação e compressão de arquivos \emph{Javascript}. Minificação consiste em reduzir o código, deixando-o apenas com o que é necessários para seu funcionamento, sem afetar nenhuma funcionalidade.
+
+
+    \section{Rsync\label{sec:rsync}}
+        \emph{Rsync} é uma ferramente que funciona apenas em sistemas \emph{Unix}, responsável por transferência de arquivos e capaz de sincronizar diretórios tanto locais quanto remotos. O \emph{Rsync} pode transferir arquivo \emph{Local -> Local}, \emph{Local -> Remoto}, \emph{Remoto -> Remoto}, \emph{Remoto -> Local}. Ele trabalha sobre o protocolo SSH e \emph{remote-update}, o que aumenta consideravelmente a velocidade e diminui a quantidade de dados transferidos, pois são trocados entre os servidores somente as diferenças entre dois grupos de arquivos reduzindo, também, o consumo de banda, além de ser muito mais seguro.
+
+
+    \section{Controle de Versão: Git\label{sec:git}}
+        É um sistema de controle de versão distribuído e open source que registra as mudanças feitas em um ou mais arquivos de forma que você possa recuperar versões específicas. Ele nos permite reverter arquivos ou até projetos inteiros para um estado anterior, comparar mudanças feitas com o tempo, ver qual desenvolvedor alterou determinado arquivo que pode estar causando problemas, entender em que ponto do projeto surigu determinada falha no sistema entre outras funcionalidades.
+
+    \section{Github\label{sec:github}}
+        \emph{Github} é um repositório online que utiliza o \emph{Git} como controle de versão e armazena diversos projetos, facilitando em processos de instalação e permitindo colaboração de outros desenvolvedores.
+
+
+    \section{Bootstrap\label{sec:bootstrap}}
+        É um framework de front-end que tem o objetivo de facilitar o desenvolvimento de interfaces para web. Contém uma coleção de vários elementos e funções personalizáveis para projetos da web, empacotados previamente em uma única ferramenta. Por se tratar de um software livre, todos os seus elementos são personalizaveis e utilizam uma combinação de HTML, CSS e Javascript.
+
+    \section{Javascript\label{sec:javascript}}
+        É uma linguagem de programação \emph{client-side} utilizada para controlar \emph{HTML} e \emph{CSS} manipulando comportamentos e elementos de páginas web.
+
+
+    \section{Jquery\label{sec:jquery}}
+        É uma biblioteca que tem como objetivo simplificar tarefas complexas da programação em \emph{Javascript}. Sua intenção é que fazer com que o desenvolvedor codifique menos porém tenha o mesmo, ou um melhor resultado sobre determinada ação.
+
+        Entre as suas características principais, a biblioteca jQuery contém:
+
+        \begin{itemize}
+            \item Manipulação do HTML/DOM;
+            \item Manipulação CSS;
+            \item Métodos de eventos HTML;
+            \item Efeitos e animações;
+            \item (\emph{AJAX}) Ferramenta Jquery para trocar de informações com servidor sem precisar atualizar a página web atual;
+            \item Entre outras funcionalidades genéricas.
+        \end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Experimentos de Frameworks
+
+\chapter{Experimentos de Frameworks\label{cap:experimento}}
+
+    \section{Cake PHP\label{sec:cake-php}}
+        \subsection{Descricao da ferramenta\label{sub:descricao-cake}}
+
+            O CakePHP é um projeto de código aberto mantido por uma comunidade bastante ativa de desenvolvedores PHP. Possui uma estrutura extensível para desenvolvimento, manutenção e implantação de aplicativos. Utiliza o padrão de projeto MVC\emph{(Model-View-Controller)} e ORM\emph{(Object-relational mappring)} com os paradigmas das convenções sobre configurações.
+
+
+        \subsection{Objetivo\label{sub:objetivo-cake}}
+
+            CakePHP tem como objetivo principal a simplificação do processo de desenvolvimento e construção de aplicações web, utilizando um núcleo onde organiza o banco de dados e alguns recursos que reduzem a codificação pelo desenvolvedor. Alguns desses recursos são a validação embutida, ACLs \emph{(lista de controle de acesso)}, segurança, manipulação de sessão e cache de Views e sanitização de dados.
+
+
+        \subsection{Características\label{sub:caracteristicas-cake}}
+            \begin{itemize}
+                \item Possui licença flexível ... completar
+                \item Ativo e com comunidade amigável
+                \item Compatível com PHP5
+                \item Geração de CRUD (\emph{Create, Read, Update and Delete, ou Criar, Ler, Atualizar e Excluir})
+                \item Funciona em qualquer subdiretório web, com poucas configurações no apache
+                \item Utiliza templates
+            \end{itemize}
+
+
+        \subsection{Primeiros Passos\label{sub:primeiros-passos-cake}}
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{abnt-alf}
+\bibliography{monografia}
+
+
+\end{document}
