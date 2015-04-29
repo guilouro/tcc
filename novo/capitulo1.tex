@@ -1,0 +1,95 @@
+\chapter{Introdução} % Capítulo
+\textbf{Esse template possui as configurações necessárias para um TCC/Monografia segundo a FAETERJ-Petrópolis, abaixo encontra-se um apanhado de funções que podem ser utilizadas na construção do documento.}
+
+
+--------------------
+
+
+Para referenciar algo basta utilizar \cite{unesco} %unesco foi o nome dado a uma referencia no arquivo monografia.tex
+
+\section{Subseção} % Seção
+Toda frase em inglês precisa ser italica \textit{Game}.
+
+
+
+\begin{quote}
+\small "Para citar uma frase de algum autor basta utilizar isso." 
+
+(Autor)
+\end{quote}
+
+
+
+Para referenciar alguma figura como a logomarca da FAETERJ basta utilizar \ref{fig:faeterj}. % deve-se referenciar imagem antes que a mesma venha a ser colocada
+
+\begin{figure}[!htb]
+     \centering
+     \includegraphics[scale=0.24]{imagens/faeterj.png}
+     \caption{\small Logomarca da FAETERJ.}
+     \label{fig:faeterj}
+\end{figure}
+
+
+
+Para criar uma lista de elementos basta utilizar o que está abaixo
+
+\begin{itemize}
+\item item1
+\item item2
+\item item3
+\end{itemize}
+
+
+
+Para criar uma equação basta utilizar \ref{eq:delta} ou $\fontsize{14}{14}{A}_{1}$.
+
+\begin{equation}
+	\fontsize{14}{14}{A}_{1} = {A}_{2} - {A}_{3}
+	\label{eq:delta}
+\end{equation}
+
+\begin{equation}
+	\fontsize{14}{14}{A}_{1} = \frac{{\alpha}^{\beta}}{\omega}
+	\label{eq:delta}
+\end{equation}
+
+
+
+Para criar um algorimo basta utilizar \ref{alg:a}.
+
+\begin{algorithm}[H]
+float A;\\
+
+\While{true}{	
+	A = 0;\\
+
+	\eIf{A > 60}{
+		A = 30;\\
+	}{
+		A = 20;\\
+   	}
+}
+\caption{Algoritmo criado.}
+\label{alg:a}
+\end{algorithm}
+
+
+
+Para criar uma tabela basta utilizar \ref{tab:1}
+
+\begin{table}[!htbp]
+\centering
+\caption{Tabela 1}
+\label{tab:1}
+\begin{tabular}{rlr}
+ 
+Hora & Localidade & Resultado \\
+\hline                             
+12:00			&	Brazil/MG	&	True	\\
+13:00			&	Brazil/SP	&	False	\\
+14:00			&	Brazil/MG	&	False	\\
+15:00			&	Brazil/RJ	&	True	\\
+\end{tabular}
+\end{table}
+
+\textbf{Editado por:} Johnathan Fercher da Rosa
