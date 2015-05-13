@@ -1,4 +1,4 @@
-\chapter{Estrutura e funcionamento do Framework\label{cap:detalhamento-projeto}}
+\chapter{Estrutura e funcionamento\label{cap:detalhamento-projeto}}
 
     \section{Processo de instalação\label{sec:processo-instalacao}}
         O \emph{Framework Lothus\{PHP\}} permite ao desenvolvedor a possibilidade de escolha entre dois níves de aplicação. O primeiro nível permite a instalação do \emph{Framework} da forma mais simples, instalando utilitário focados em um desenvolvimento direcionado ao backend do projeto, integrando facilidade a troca de informações com o banco de dados, desenvolvimento através do MVC, URLs amigáves e sistemas de templates.
@@ -15,9 +15,10 @@
 
 
 
+    \section{Estrutura de pastas e arquivos\label{sec:estrutura-pastas}}
+        Neste capítulo será apresentado a estrutura de pastas do \emph{Framework Lothus\{PHP\}} juntamente com o processo de criação e funcionamento de cada etapa.
 
-    \section{Estrutura de pastas\label{sec:estrutura-pastas}}
-        Neste capítulo será apresentado a estrutura de pastas do \emph{Framework Lothus\{PHP\}} juntamente com o detalhamento de cada funcionalidade do projeto.
+        Ao clonar o projeto utilizando o git, como visto no capítulo anterior, será gerada uma estrutura de pastas dentro da pasta Lothus-PHP.
 
         \begin{figure}[!htb]
             \centering
@@ -26,7 +27,32 @@
             \label{cap:sass}
         \end{figure}
 
+        Neste primeiro momento já ocorre uma pequena divisão do projeto onde a pasta \emph{app} é responsável por gerenciar a aplicação e a pasta \emph{system} responsável pelo \emph{core}, ou seja, gerenciamento interno do framework. Em sua raiz existe, além dessas duas pastas, três importantes arquivos para o projeto, que são:
+
+        \begin{itemize}
+            \item \textbf{.gitignore}: Um arquivo que faz parte da configuração do git e é responsável por guardar, linha por linha, todos os arquivos ou pastas serão ignorados pelo git no momento de fazer o versionamento do projeto. Isso evita o acumulo de arquivos desnecessários, que são gerados automaticamente, no pacote de instalação do Framework.
+
+            \item \textbf{.htaccess}: Arquivo que é lido antes do index.php e tem a responsabilidade de criar a rota inicial do projeto, fazendo o direcionamento para o arquivo correto na inicialização do sistema.
+
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[scale=0.8]{htaccess1.jpg}
+                \caption{\small Estrutura do htaccess na raiz do projeto}
+                \label{cap:sass}
+            \end{figure}
+
+            \item \textbf{manage.py}:
+
+        \end{itemize}
+
+    \section{Sistema responsável pelo funcionamento\label{sec:system-core}}
+
+        A pasta \emph{system} é o "coração" do Framework, é nele que temos todas as classes responsáveis pelas regras de funcionamento dos projetos.
+
+
+
     \section{Divisão Backend - frontend\label{sec:back-front}}
+
 
         \subsection{Comandos do Grunt\label{sub:comandos-grunt}}
 
