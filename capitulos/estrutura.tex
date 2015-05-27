@@ -83,11 +83,13 @@ class Config {
 }
 \end{lstlisting}
 
-        \textbf{\$\_Index}: É uma variável \textbf{pública} que recebe, como string, o nome do \emph{Controller} padrão a ser requisitado pelo sistema no caso de a URL não ter, explicitamente, este valor.
+        \begin{itemize}
+            \item\textbf{\$\_Index}: É uma variável \textbf{pública} que recebe, como string, o nome do \emph{Controller} padrão a ser requisitado pelo sistema no caso de a URL não ter, explicitamente, este valor.
 
-        \textbf{\$error}: Trata-se de uma \textbf{privada} váriavel booleana, que funciona como uma chave para exibir um erro para o desenvolvedor ou direcionar o usuário para uma página 404, no momento em que for acessada alguma página inexistente. No caso de \textbf{\$error = TRUE} será exibido uma mensagem de alerta ao desenvolvedor sobre alguma falha nos padrões do \emph{Framework}. Caso \textbf{\$error = FALSE} o usuário será redirecionado para uma página de \emph{erro 404}
+            \item\textbf{\$error}: Trata-se de uma \textbf{privada} váriavel booleana, que funciona como uma chave para exibir um erro para o desenvolvedor ou direcionar o usuário para uma página 404, no momento em que for acessada alguma página inexistente. No caso de \textbf{\$error = TRUE} será exibido uma mensagem de alerta ao desenvolvedor sobre alguma falha nos padrões do \emph{Framework}. Caso \textbf{\$error = FALSE} o usuário será redirecionado para uma página de \emph{erro 404}
 
-        \textbf{ERROR(\$pag)}: É um método protegido, que recebe como parâmetro o nome da página que não foi encontrada no sistema. Sua funcionalidade é, inicialmente, verificar se a variável \textbf{\$error} é \textbf{TRUE} \emph{(Verdadeiro)} ou \textbf{FALSE} \emph{(False)}, para posteriormente, direcionar o usuário para a página de erro padrão do sistema ou exibir uma mensagem dizendo se o erro foi causado pela falta de um \emph{Controller} ou de uma \emph{Action} para o sistema.
+            \item\textbf{ERROR(\$pag)}: É um método protegido, que recebe como parâmetro o nome da página que não foi encontrada no sistema. Sua funcionalidade é, inicialmente, verificar se a variável \textbf{\$error} é \textbf{TRUE} \emph{(Verdadeiro)} ou \textbf{FALSE} \emph{(False)}, para posteriormente, direcionar o usuário para a página de erro padrão do sistema ou exibir uma mensagem dizendo se o erro foi causado pela falta de um \emph{Controller} ou de uma \emph{Action} para o sistema.
+        \end{itemize}
 
         O método é escrito dessa forma:
 
