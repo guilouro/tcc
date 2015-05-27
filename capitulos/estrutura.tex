@@ -53,30 +53,45 @@
 
         \end{itemize}
 
-    \section{System\label{sec:system-core}}
+    \section{Sistema\label{sec:system-core}}
 
-        A pasta \emph{system} é o motor do \emph{Framework}, nela estão todas as classes responsáveis pelas regras de funcionamento dos projetos, tanto nas requisições HTTP, passando por padronização de Controllers, Views e chegando até o relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos alocados dentro de \emph{system}.
+        O Framework recebe um primeiro nível de divisão no processo de criação do mesmo, que é a divisão do Sistema par a Aplicação o sistema fica todo centralizado na pasta \emph{system}, e é onde contém o motor do \emph{Framework}, nele estão todas as classes responsáveis pelas regras de funcionamento do projeto, tanto nas requisições HTTP, passando por padronização de Controllers, Views até chegar ao relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
 
-            \begin{figure}[!htb]
-                \centering
-                \includegraphics[scale=1]{system-path.jpg}
-                \caption{\small Estrutura interna da pasta system}
-                \label{cap:sass}
-            \end{figure}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale=0.6]{system-path.jpg}
+        \caption{\small Estrutura interna da pasta system}
+        \label{cap:sass}
+    \end{figure}
 
 
 
+        \subsection{Config\label{sub:system-config}}
+
+            A Classe \emph{Config} é responsável pela configuração inicial de qualquer projeto que faz uso do \emph{Lothus\{PHP\}}. Ela tem a responsabilidade de definir qual \emph{View} será iniciada ao acessar o link do sistema e também se responsabiliza em definir se será exibido ou não um \emph{debug} para o desenvolvedor.
+
+            O arquivo \emph{Config.php} possui a seguinte estrutura:
+
+            \emph{}
 
 \begin{lstlisting}
-private function setUrl() {
-    $this->_url = (isset($_GET['url']) ? $_GET['url']  : $this->_Index . "/index_action" );
+class Config {
+    public  $_Index = "home";
+    private $error = TRUE;
+
+    protected function ERROR($pag){}
 }
 \end{lstlisting}
 
+        \textbf{\$\_Index}: É uma variável \textbf{pública} que recebe, como string, o nome do \emph{Controller} padrão a ser requisitado pelo sistema no caso de a URL não ter, explicitamente, este valor.
+
+        \textbf{\$error}: Trata-se de uma \textbf{privada} váriavel booleana, que funciona como uma chave para exibir um erro para o desenvolvedor ou direcionar o usuário para uma página 404, no momento em que for acessada alguma página inexistente. No caso de \textbf{\$error \= TRUE} será exibido uma mensagem de alerta ao desenvolvedor sobre alguma falha nos padrões do \emph{Framework}. Caso \textbf{\$error \= FALSE} o usuário será redirecionado para uma página de \emph{erro 404}
+
+        \subsection{System\label{sub:system-sis}}
 
         \subsection{Helpers\label{sub:system-helper}}
 
-        \subsection{Config\label{sub:system-config}}
+
 
         \subsection{Controller\label{sub:system-controller}}
 
