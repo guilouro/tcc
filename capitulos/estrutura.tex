@@ -45,7 +45,7 @@
 
             \begin{figure}[!htb]
                 \centering
-                \includegraphics[scale=0.6]{manage.jpg}
+                \includegraphics[scale=0.5]{manage.jpg}
                 \caption{\small Regras para uso básico do manage.py}
                 \label{cap:sass}
             \end{figure}
@@ -53,9 +53,40 @@
 
         \end{itemize}
 
-    \section{Sistema responsável pelo funcionamento\label{sec:system-core}}
+    \section{System\label{sec:system-core}}
 
-        A pasta \emph{system} é o "coração" do Framework, é nele que temos todas as classes responsáveis pelas regras de funcionamento dos projetos.
+        A pasta \emph{system} é o motor do \emph{Framework}, nela estão todas as classes responsáveis pelas regras de funcionamento dos projetos, tanto nas requisições HTTP, passando por padronização de Controllers, Views e chegando até o relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos alocados dentro de \emph{system}.
+
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[scale=1]{system-path.jpg}
+                \caption{\small Estrutura interna da pasta system}
+                \label{cap:sass}
+            \end{figure}
+
+
+
+
+\begin{lstlisting}
+private function setUrl() {
+    $this->_url = (isset($_GET['url']) ? $_GET['url']  : $this->_Index . "/index_action" );
+}
+\end{lstlisting}
+
+
+        \subsection{Helpers\label{sub:system-helper}}
+
+        \subsection{Config\label{sub:system-config}}
+
+        \subsection{Controller\label{sub:system-controller}}
+
+        \subsection{Model\label{sub:system-model}}
+
+        \subsection{System\label{sub:system-system}}
+
+        \subsection{Template\label{sub:system-template}}
+
+
 
 
 

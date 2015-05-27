@@ -19,32 +19,68 @@
 \usepackage{float}
 \usepackage{epigraph}
 
-\usepackage{listings}
+\usepackage{listings,xcolor}
 
 % Define o caminho das figuras
 \graphicspath{{capitulos/figuras/}}
 
-\lstset{numbers=left, stepnumber=5, firstnumber=1, numberstyle=\tiny, extendedchars=true, breaklines=true, frame=tb, basicstyle=\footnotesize, stringstyle=\ttfamily, showstringspaces=false }
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+\lstset{
+  language         = PHP,
+  extendedchars = \true,
+  keepspaces = true,
+  basicstyle       = \small\ttfamily,
+  upquote          =true,
+  numbers          =left,
+  stepnumber       =1,
+  numbersep        =10pt,
+  showstringspaces =false,
+  breaklines       =true,
+  frameround       =ftff,
+  frame            =single,
+  belowcaptionskip =5em,
+  belowskip        =3em,
+  numberstyle      =\tiny\color{gray},
+  keywordstyle     = \color{dkblue},
+  stringstyle      = \color{red},
+  identifierstyle  = \color{dkgreen},
+  commentstyle     = \color{gray},
+  emph             =[1]{php},
+  emphstyle        =[1]\color{black},
+  emph             =[2]{if,and,or,else},
+  emphstyle        =[2]\color{dkyellow}
+  keywordstyle = \bfseries,
+  morekeywords={function,return}
+}
+
+
+% \lstset{language=PHP,
+%     commentstyle = \color{gray},
+%     inputencoding = utf8x,
+% }
+% \lstset{numbers=left, stepnumber=5, firstnumber=1, numberstyle=\tiny, extendedchars=true, breaklines=true, frame=tb, basicstyle=\footnotesize, stringstyle=\ttfamily, showstringspaces=false }
 
 %\makenomenclature
 
 % Para listar programas em C#
-\lstdefinelanguage{cs}
-  {morekeywords={abstract,event,new,struct,as,explicit,null,switch
-		base,extern,object,this,bool,false,operator,throw,
-		break,finally,out,true,byte,fixed,override,try,
-		case,float,params,typeof,catch,for,private,uint,
-		char,foreach,protected,ulong,checked,goto,public,unchecked,
-		class,if,readonly,unsafe,const,implicit,ref,ushort,
-		continue,in,return,using,decimal,int,sbyte,virtual,
-		default,interface,sealed,volatile,delegate,internal,short,void,
-		do,is,sizeof,while,double,lock,stackalloc,
-		else,long,static,enum,namespace,string, },
-	  sensitive=false,
-	  morecomment=[l]{//},
-	  morecomment=[s]{/*}{*/},
-	  morestring=[b]",
-}
+% \lstdefinelanguage{cs}
+%   {morekeywords={abstract,event,new,struct,as,explicit,null,switch
+% 		base,extern,object,this,bool,false,operator,throw,
+% 		break,finally,out,true,byte,fixed,override,try,
+% 		case,float,params,typeof,catch,for,private,uint,
+% 		char,foreach,protected,ulong,checked,goto,public,unchecked,
+% 		class,if,readonly,unsafe,const,implicit,ref,ushort,
+% 		continue,in,return,using,decimal,int,sbyte,virtual,
+% 		default,interface,sealed,volatile,delegate,internal,short,void,
+% 		do,is,sizeof,while,double,lock,stackalloc,
+% 		else,long,static,enum,namespace,string, },
+% 	  sensitive=false,
+% 	  morecomment=[l]{//},
+% 	  morecomment=[s]{/*}{*/},
+% 	  morestring=[b]",
+% }
 
 \newcommand{\AUTOR}{Guilherme Peixoto da Costa Louro}
 \newcommand{\SEGUNDOAUTOR}{}
