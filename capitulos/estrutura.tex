@@ -99,7 +99,7 @@ class Config {
 
         \emph{}
 
-        A lógica de programação aplicada a este métdo é a seguinte:
+        A lógica de programação aplicada a este método é a seguinte:
 
         \emph{}
 
@@ -113,15 +113,57 @@ protected function ERROR($pag) {
 }
 \end{lstlisting}
 
-        \subsection{Url amigável e o padrão MVC\label{sub:url-amigavel}}
 
         \subsection{System\label{sub:system-sis}}
+
+            O projeto é iniciado com a primeira chamada sendo referenciada à classe \emph{System} que tem como herança os métodos e atributos, que não são privados, da classe \emph{Config}. Sua principal funcionalidade é interpretar o padrão de URL criado para o Framework e fazer a separação para a camada correta de Controllers e actions com seus respectivos parâmetros, quando houver.
+
+            O \emph{Lothus\{PHP\}} usa um padrão de url denominado \textbf{url amigável}, que facilita tanto a leitura dos mecanismos de buscas quanto a leitura do próprio usuário, além de padronizar todos os projetos desenvolvidos pelo \emph{Framework}.
+
+            A URL segue o seguinte padrão:
+
+            \emph{http://urldosite.com.br/\{Controller\}/\{Action\}/\{n-parametros\}}
+
+            \begin{itemize}
+                \item\textbf{Controller:} Classe controller referente à página acessada
+                \item\textbf{Action:} Método existente nessa mesma classe
+                \item\textbf{n-parametros:} Será passado como argumento para a o método desta mesma classe controller.
+            \end{itemize}
+
+            Todos esses itens serão abordados corretamento no momento em que for descrito o funcionamento das classes de Aplicação do projeto.
+
+            Pode se explicar que a classe system, ao ser invocada, recebe a URL via GET e através de alguns métodos essa URL é desmembrada, as variáveis da classe são definidas e por fim o projeto é inicia, como demostrada na estrutura da classe logo abaixo.
+
+\begin{lstlisting}
+class System extends Config {
+
+    public $_url;
+    private $_explode;
+    public  $_controller;
+    public  $_action;
+    public  $_params;
+
+    public function init(){}
+    private function setUrl(){}
+    private function setExplode(){}
+    private function setSlug($w){}
+    private function setController(){}
+    private function setAction(){}
+    public function setParams(){}
+    public function setGets(){}
+    public function run(){}
+}
+\end{lstlisting}
+
+
+
 
         \subsection{Helpers\label{sub:system-helper}}
 
 
 
         \subsection{Controller\label{sub:system-controller}}
+        % \subsection{Url amigável e o padrão MVC\label{sub:url-amigavel}}
 
         \subsection{Model\label{sub:system-model}}
 
