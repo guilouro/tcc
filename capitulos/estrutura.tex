@@ -164,6 +164,71 @@ class System extends Config {
                 \item\textbf{\$\_params}: Vetor público que guardará todos os parâmetros passados pela URL.
             \end{itemize}
 
+            Esses valores são atribuídos através dos métodos que além de atribuir fazem uso dessas mesmas variáves da classe, como descrito nos elementos de cada método abaixo.
+.
+            \begin{itemize}
+
+                \item\textbf{init()}: Primeiro método a ser chamado, explicitamente, pela classe e responsável por fazer a chamada de todos os métodos que fazem as atribuíções a todas as variáves dessa classe.
+\begin{lstlisting}
+public function init() {
+    $this->setUrl();
+    $this->setExplode();
+    $this->setController();
+    $this->setAction();
+    $this->setParams();
+    $this->setGets();
+}
+\end{lstlisting}
+
+                \item\textbf{setUrl()}: Responsável por atribuir a string da URL atual para a variável \textbf{\$\_url}. Caso a URL passada não tenha, explicitamente um controller e uma action, será atribuído o valor da variável \textbf{\$\_Index}, que é uma herança da classe Config, juntamente com a action padrão \textbf{index\_action}.
+\begin{lstlisting}
+private function setUrl() {
+    $this->_url = (isset($_GET['url']) ? $_GET['url']  :
+        $this->_Index . "/index_action" );
+}
+\end{lstlisting}
+
+                \item\textbf{setExplode()}: Método que atribui ao array\emph{(Vetor)} \textbf{\$\_explode} os valores passados para a variável \textbf{\$\_url} e delimitados pela barra\emph("/").
+
+\begin{lstlisting}
+private function setExplode(){
+    $this->_explode = explode("/", $this->_url);
+}
+\end{lstlisting}
+
+                \item\textbf{setController()}: Define qual controller será usadado para a requisição atual, através do primeiro índice do vetor \textbf{\$\_explode}
+
+\begin{lstlisting}
+private function setController(){
+    $this->_controller = $this -> setSlug($this -> _explode[0]);
+}
+\end{lstlisting}
+
+                \item\textbf{setAction()}: Define qual action será usadado para a requisição atual, através do segundo índice do vetor \textbf{\$\_explode}. Caso não exista, será atribuído o valor \textbf{"index\_action"}.
+
+\begin{lstlisting}
+private function setAction(){
+    $this->_action = $this -> setSlug(
+        !isset($this->_explode[1]) ||
+        $this->_explode[1] == null ||
+        $this->_explode[1] == 'index' ? 'index_action' :
+        $this->_explode[1]
+    );
+}
+\end{lstlisting}
+
+                \item\textbf{setParams()}: Responsável por criar o vetor para todos os parâmetros passados pela URL atual. Parâmetros esses que são definidos por todos o valores passados além do controller e action na string da URL.
+
+                \item\textbf{setGets()}: Verifica a aparição da requisição GET no HTTP da página atual e define o vetor \textbf{\$\_GET} do PHP com seus respectivos valores.
+
+                \item\textbf{setSlug(\$w)}: É responsável por verificar se o item \textbf{\$w} possui duas ou mais palavras separadas por ífem. Caso exista, esse método retira os ífens e transforma todas essas palavras em apenas uma no modo \emph{CamelCase}.
+
+                \item\textbf{run()}: É o método responsável por carregar o controller e a action com todos os parâmetros caso eles existam. Se algum desses objetos não forem encontrado, o método \textbf{\$ERROR}, herdado da classe \emph{Config}, é chamado.
+
+            \end{itemize}
+
+
+
         \subsection{Helpers\label{sub:system-helper}}
 
 
