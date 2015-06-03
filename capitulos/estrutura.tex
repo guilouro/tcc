@@ -86,7 +86,6 @@ class Config {
 \end{lstlisting}
 
 
-
         \begin{itemize}
             \item\textbf{\$\_Index}: É uma variável \textbf{pública} que recebe, como string, o nome do \emph{Controller} padrão a ser requisitado pelo sistema no caso de a URL não ter, explicitamente, este valor.
 
@@ -155,8 +154,15 @@ class System extends Config {
 }
 \end{lstlisting}
 
+            A classe possui alguns atributos responsáveis por guardar determinadas informações a serem utilizadas em diversas etapas de sua leitura. Esses atributos tem suas responsabilidades descritas abaixo.
 
-
+            \begin{itemize}
+                \item\textbf{\$\_url}: Atributo público que receberá a url atual como string.
+                \item\textbf{\$\_explode}: É um vetor privado que receberá, em cada uma de sua posição, uma parte da URL que se utiliza da \emph{"/"} como regra de separação.
+                \item\textbf{\$\_controller}: Atributo público que guardará o nome do Controller a ser usado.
+                \item\textbf{\$\_action}: Atributo público que guardará o nome da Action a ser usada.
+                \item\textbf{\$\_params}: Vetor público que guardará todos os parâmetros passados pela URL.
+            \end{itemize}
 
         \subsection{Helpers\label{sub:system-helper}}
 
