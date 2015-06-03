@@ -212,18 +212,52 @@ private function setAction(){
         !isset($this->_explode[1]) ||
         $this->_explode[1] == null ||
         $this->_explode[1] == 'index' ? 'index_action' :
-        $this->_explode[1]
-    );
+        $this->_explode[1]);
 }
 \end{lstlisting}
 
                 \item\textbf{setParams()}: Responsável por criar o vetor para todos os parâmetros passados pela URL atual. Parâmetros esses que são definidos por todos o valores passados além do controller e action na string da URL.
 
+\begin{lstlisting}
+public function setParams(){
+    unset($this->_explode[0], $this->_explode[1]);
+    if( end( $this->_explode ) == null )
+        array_pop($this->_explode);
+    $this->_params = $this->_explode;
+}
+\end{lstlisting}
+
                 \item\textbf{setGets()}: Verifica a aparição da requisição GET no HTTP da página atual e define o vetor \textbf{\$\_GET} do PHP com seus respectivos valores.
+
+\begin{lstlisting}
+public function setGets(){
+    $url = $_SERVER['REQUEST_URI'];
+    $url = explode("?", $url);
+    if(isset($url[1])) {
+        $urlParams = explode("&", $url[1]);
+        foreach ($urlParams as $g) {
+            $get = explode("=", $g);
+            $_GET[$get[0]] = $get[1];
+        }
+    }
+}
+\end{lstlisting}
 
                 \item\textbf{setSlug(\$w)}: É responsável por verificar se o item \textbf{\$w} possui duas ou mais palavras separadas por ífem. Caso exista, esse método retira os ífens e transforma todas essas palavras em apenas uma no modo \emph{CamelCase}.
 
+\begin{lstlisting}
+private function setSlug($w){
+    $arr = explode("-", $w);
+    for ($i=1; $i < count($arr); $i++) {
+        $arr[$i] = ucfirst($arr[$i]);
+    }
+    $slug = implode("", $arr);
+    return $slug;
+}
+\end{lstlisting}
+
                 \item\textbf{run()}: É o método responsável por carregar o controller e a action com todos os parâmetros caso eles existam. Se algum desses objetos não forem encontrado, o método \textbf{\$ERROR}, herdado da classe \emph{Config}, é chamado.
+
 
             \end{itemize}
 
