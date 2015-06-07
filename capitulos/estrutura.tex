@@ -256,14 +256,24 @@ private function setSlug($w){
 }
 \end{lstlisting}
 
-                \item\textbf{run()}: É o método responsável por carregar o controller e a action com todos os parâmetros caso eles existam. Se algum desses objetos não forem encontrado, o método \textbf{\$ERROR}, herdado da classe \emph{Config}, é chamado.
-
+                \item\textbf{run()}: É o método responsável por carregar o controller e a action com todos os parâmetros, caso eles existam. Se algum desses objetos não forem encontrado, o método \textbf{\$ERROR}, herdado da classe \emph{Config}, é chamado para exibir a mensagem adequada ao usuário.
 
             \end{itemize}
 
 
 
         \subsection{Helpers\label{sub:system-helper}}
+            São classes que auxiliam o desenvolvedor no andamento do projeto, podendo ou não ser utilizadas em determinadas aplicações. O \emph{Framework} vem com algumas classes em sua instalação, podendo ser adicionadas outras se o desenvolvedor sentir necessidade. As classes se encontram dentro da pasta \textbf{helpers} e segue um padrão de nomenclatura que é o nome da classe acompanhada da palavra \emph{Helper}. Para uma classe chamada \textbf{Email} teria que ter a seguinte nomenclatura: \textbf{EmailHelper}.
+
+            O projeto acompanha algumas classes que serão descritas logo abaixo:
+
+            \begin{itemize}
+                \item\textbf{AuthHelper}: Auxilia na autenticação de usuários para projetos que possuem áreas restritas. Ela se responsabiliza em fazer o login do usuário no sistema de forma segura, comparando a senha digitada com a que possui no banco de dados através da criptografia \textbf{sha512} e iniciando uma sessão para o usuário. Possui um métdo de logout, onde finaliza uma sessão com o usuário e o desconecta da área restrita do sistema. Além de possuir métodos que ajudam no controle de páginas protegidas, fazendo a verificação da permissão cada vez que o usuário tenta acessar a mesma.
+
+                \item\textbf{EmailHelper}: Classe que auxilia o envio de email. Por se tratar de uma classe que extende à \emph{PHPMailer} ela acaba trabalhando como uma facilidadora desta classe que é uma ferramenta avançada para envio de email comum ou autenticado.
+
+
+            \end{itemize}
 
 
 
