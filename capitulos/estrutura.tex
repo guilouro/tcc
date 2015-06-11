@@ -312,6 +312,66 @@ class ImageHelper {
 }
 \end{lstlisting}
 
+            \item\textbf{PaginationHelper}: Classe capaz de dividir um conteúdo vindo do banco de dados em diversas páginas através de uma paginação. A classe permite, ao ser instanciada, receber o nome da tabela no banco de dados que será feita a consulta. Essa consulta possibilita ao desenvolvedor escolher quantos itens serão exibidos por páginas e a ordem de exibiçao. Além dessa exibição ela fornece alguns métodos auxiliares onde se pode ter o retorno da página ou url atual. A classe possui uma estrutura bem simples como mostrada abaixo.
+
+\begin{lstlisting}
+class PaginationHelper
+{
+    private $_model;
+    private $_limite;
+    private $_paginaAtual;
+    private $_inicio;
+    private $_total_registros;
+
+    /**
+     * Classe para paginação
+     * @param String $tabela tabela no banco de dados para a consulta
+     */
+    function __construct( $tabela ) { }
+
+    /**
+     * Pega a quantidade total de páginas de acordo com a lista
+     * @return int retorna a quantidade de páginas
+     */
+    public function totalPaginas() { }
+
+    /**
+     * Responsável por fazer a consulta limitada
+     * para a paginação e definição de alguns atributos
+     * @param  Array $arr parâmetros SQL. 'where' , 'orderby'
+     * @return Array      retorna a consulta limitada
+     */
+    public function consulta(Array $arr = null) { }
+
+    /**
+     * Retorna a página atual captura
+     * @return int
+     */
+    public function getPaginaAtual() { }
+
+    /**
+     * Gera url atual
+     * @return string retorna a url até a parte da pagina
+     */
+    public function getUrl() { }
+
+    /**
+     * Cria a view para exibição da paginação
+     * @param  string $classe define a classe da div que engloba a paginação
+     * @return string
+     */
+    public function view($classe = "pagination pagination-centered") { }
+}
+\end{lstlisting}
+
+            Ao fazer a chamado do método \textbf{view()} no template do sistema, um componente de paginação é criado de acordo com a quantidade de páginas existente na sessão atual. Esse método, por padrão, cria o componente com uma classe de \emph{css} referente ao framework \emph{Bootstrap}. Com isso o componente passa a ter uma formatação adequada para uma paginação.
+
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[scale=1]{paginacao.png}
+                \caption{\small Componente de paginação criado por PaginatioHelper}
+                \label{cap:paginaca}
+            \end{figure}
 
             \end{itemize}
 
