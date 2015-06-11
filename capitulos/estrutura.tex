@@ -270,7 +270,47 @@ private function setSlug($w){
             \begin{itemize}
                 \item\textbf{AuthHelper}: Auxilia na autenticação de usuários para projetos que possuem áreas restritas. Ela se responsabiliza em fazer o login do usuário no sistema de forma segura, comparando a senha digitada com a que possui no banco de dados através da criptografia \textbf{sha512} e iniciando uma sessão para o usuário. Possui um métdo de logout, onde finaliza uma sessão com o usuário e o desconecta da área restrita do sistema. Além de possuir métodos que ajudam no controle de páginas protegidas, fazendo a verificação da permissão cada vez que o usuário tenta acessar a mesma.
 
-                \item\textbf{EmailHelper}: Classe que auxilia o envio de email. Por se tratar de uma classe que extende à \emph{PHPMailer} ela acaba trabalhando como uma facilidadora desta classe que é uma ferramenta avançada para envio de email comum ou autenticado.
+                \item\textbf{EmailHelper}: Classe auxiliadora para envio de emails. Extende à classe \emph{PHPMailer} e trabalha como uma facilidadora para esta, que é uma ferramenta avançada para envio de emails em \emph{php}.
+
+                \item\textbf{ImageHelper}: Esta é uma classe para otimização e salvamento de imagens nos projetos. Ela pode trabalhar tanto com imagens enviadas por um formulário quanto imagens provenientes de algum link da internet. Sua estrutura é formada apenas por um construtor e mais 3 métodos públicos. Ós métodos \textbf{ResizeByUrl} e \textbf{ResizeByUpload} salvam o arquivo de imagem na pasta especificada atravéz do construtor da classe e retornam o nome gerado para o arquivo pelo método \textbf{Rename}. Esse nome é gerado para evitar a criação de imagens caractéres especiais em seu nome evitando inclusive, sobrescrever imagens com o mesmo nome. A classe obedece a seguinte estrutura descrita abaixo:
+
+\begin{lstlisting}
+class ImageHelper {
+
+    private $_ALTURA_PADRAO;
+    private $_pasta;
+
+    /*
+     * Metodo construtor
+     * @param $pasta = Nome da pasta para upload
+     * @param $altura_padrao = Definir uma altura padrão para os arquivos
+     */
+    function __construct($pasta, $altura_padrao = null) { }
+
+    /*
+     * Metodo ResizeByUrl
+     * Salva uma imagem a partir de um link
+     * @param $url = Url da imagem a ser salva
+     * @param $altura = Definir uma altura para a imagem atual, caso seja diferente da altura padrão
+     */
+    public function ResizeByUrl($url, $altura = null) { }
+
+    /*
+     * Metodo ResizeByUrl
+     * Salva uma imagem a partir de upload
+     * @param $imagem = ex: $_FILES['imagem']
+     * @param $altura = Definir uma altura para a imagem atual, caso seja diferente da altura padrão
+     */
+    public function ResizeByUpload($imagem, $altura = null) { }
+
+    /*
+     * Metodo Rename
+     * Remove acentos, espaços e caracteres especiais e cria um nome aleatório.
+     * @param $string = string a ser limpa
+     */
+    public function Rename( $string ) { }
+}
+\end{lstlisting}
 
 
             \end{itemize}
