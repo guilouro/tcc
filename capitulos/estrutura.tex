@@ -373,6 +373,54 @@ class PaginationHelper
                 \label{cap:paginaca}
             \end{figure}
 
+
+            \item\textbf{RedirectHelper}: Simples classe que fornece a possibilidade de trabalhar com redirecionamento dentro do projeto. Possui métodos para retorno de url, \empth{Controller} atual e \emph{Action} atual. Seu métodos principais são os de redirecionamento, tomando como base o \emph{controller}, a \emph{action} ou ambos como ponto de destino para este redirecionamento. A classe e seus principais métodos podem ser vistas no modelo abaixo:
+
+
+\begin{lstlisting}
+class RedirectHelper {
+    ...
+
+    /**
+     * Retorna o controller atual
+     * @return (String)
+     */
+    public function getCurrentController() { }
+
+    /**
+     * Retorna a action atual
+     * @return (String)
+     */
+    public function getCurrentAction() { }
+
+    /**
+     * Redireciona para o controller especificado
+     * @param  (String) nome do controller
+     * @return void
+     */
+    public function goToController( $controller ) { }
+
+    /**
+     * Redireciona para a action especificada
+     * @param  (String) nome da string
+     * @param  (boolean) para usar parâmetro global
+     * @return void
+     */
+    public function goToAction( $action, $paramsGlobal = FALSE ) { }
+
+    /**
+     * Redireciona para controller e action especificada
+     * @param  (String) nome controller
+     * @param  (String) nome action
+     * @return void
+     */
+    public function goToControllerAction( $controller, $action ) { }
+
+    ...
+
+}
+\end{lstlisting}
+
             \end{itemize}
 
 
