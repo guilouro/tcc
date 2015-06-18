@@ -426,6 +426,21 @@ class RedirectHelper {
 
 
         \subsection{Controller\label{sub:system-controller}}
+            Essa classe recebe a \emph{System} como herança e possui, inicialmente, dois métodos e um atributo. Sua função é guardar o template que será usado e compitar a view para o sistema. A estrutura da classa está descrita abaixo.
+
+
+\begin{lstlisting}
+class Controller extends System {
+
+    public $_layout = 'default';
+
+    protected function view($nome_pagina, $vars = null) { }
+
+    public function init() { }
+}
+\end{lstlisting}
+
+
         % \subsection{Url amigável e o padrão MVC\label{sub:url-amigavel}}
 
         \subsection{Model\label{sub:system-model}}
