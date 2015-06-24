@@ -441,8 +441,10 @@ class Controller extends System {
 \end{lstlisting}
 
             \begin{itemize}
-                \item\textbf{\$\_layout}: Método público para definir o template base da página a ser carregada.
-                \item\textbf{view(\$nome\_pagina, \$vars \= null)}:
+                \item\textbf{\$\_layout}: Atributo público para definir o template base da página a ser carregada.
+                \item\textbf{view(\$nome\_pagina, \$vars \= null)}: Método responsável por atribuir o template da view ao template base, e recebe como primeiro parâmetro \emph{(\$nome\_pagina)} o nome do arquivo do template a ser utilizado. O Método possui um segundo parâmetro \emph{(\$vars)} opcional, que é capaz de receber um vetor e distribuí-lo em variáveis para ser utilizada no template carregado.
+
+                \item\textbf{init()}: É o primeiro método a ser chamado no momento da criação do Controller. Ele pode ser ou não implementado dentro de cada controller criado e é o primeiro método a ser executado sempre que carrega uma página.
             \end{itemize}
 
 
