@@ -451,6 +451,50 @@ class Controller extends System {
         % \subsection{Url amigável e o padrão MVC\label{sub:url-amigavel}}
 
         \subsection{Model\label{sub:system-model}}
+            Classe responsável por fazer a comunicação entre aplicação e banco de dados. Utizando, como padrão, o módulo nativo do php chamado \emph{PDO}. Esta classe segue a seguinte estrutura descrita abaixo.
+
+
+\begin{lstlisting}
+class Model {
+    protected $db;
+    public    $_tabela;
+    public    $_fk;
+
+    public function __construct()  { }
+
+    public function insert( Array $dados, $debug = FALSE ) { }
+
+    public function read( $where = null , $limit = null ,
+        $offset = null , $orderby = null, $debug = FALSE ) { }
+
+    public function readLine( $where = null , $limit = null ,
+        $offset = null , $orderby = null, $debug = FALSE ) { }
+
+    public function update( Array $dados, $where, $debug = FALSE ) { }
+
+    public function delete( $where ) { }
+
+    private function getTableField() { }
+
+    public function consulta($sql, $debug = FALSE) { }
+
+    public function consultaLinha ( $sql , $debug = FALSE ) { }
+
+    public function consultaValor ( $sql , $debug = FALSE ) { }
+
+    public function populateFK() { }
+
+    private function debug ( $sql )  { }
+}
+\end{lstlisting}
+
+            \begin{itemize}
+                \item\textbf{\$db}: Atributo protegido que se torna uma instância da classe \emph{PDO}, capaz de fazer o processo de envio e recebimento de dados entre aplicação e banco de dados. Este objeto é instanciado atravéz do construtor da classe.
+
+                \item\textbf{\$\_tabela}: Atributo público que guarda uma \emph{string} como o nome da tabela, existente no banco de dados, que será manipulada pela classe.
+
+                \item\textbf{\$_fk}: Atributo que recebe um vetor, no caso de existeir relações entre tabelas, ligadas com chave estrangeira.
+            \end{itemize}
 
         \subsection{Template\label{sub:system-template}}
 
@@ -479,13 +523,3 @@ class Controller extends System {
 
 
         \subsection{Comandos do Grunt\label{sub:comandos-grunt}}
-
-    \section{System\label{sec:estrutura-pastas}}
-
-    \section{Model\label{sec:estrutura-pastas}}
-
-    \section{View\label{sec:estrutura-pastas}}
-
-    \section{View\label{sec:estrutura-pastas}}
-
-    \section{Template\label{sec:estrutura-pastas}}
