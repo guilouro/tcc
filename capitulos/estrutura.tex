@@ -272,7 +272,7 @@ private function setSlug($w){
 
                 \item\textbf{EmailHelper}: Classe auxiliadora para envio de emails. Extende à classe \emph{PHPMailer} e trabalha como uma facilidadora para esta, que é uma ferramenta avançada para envio de emails em \emph{php}.
 
-                \item\textbf{ImageHelper}: Esta é uma classe para otimização e salvamento de imagens nos projetos. Ela pode trabalhar tanto com imagens enviadas por um formulário quanto imagens provenientes de algum link da internet. Sua estrutura é formada apenas por um construtor e mais 3 métodos públicos. Ós métodos \textbf{ResizeByUrl} e \textbf{ResizeByUpload} salvam o arquivo de imagem na pasta especificada atravéz do construtor da classe e retornam o nome gerado para o arquivo pelo método \textbf{Rename}. Esse nome é gerado para evitar a criação de imagens caractéres especiais em seu nome evitando inclusive, sobrescrever imagens com o mesmo nome. A classe obedece a seguinte estrutura descrita abaixo:
+                \item\textbf{ImageHelper}: Esta é uma classe para otimização e salvamento de imagens nos projetos. Ela pode trabalhar tanto com imagens enviadas por um formulário quanto imagens provenientes de algum link da internet. Sua estrutura é formada apenas por um construtor e mais 3 métodos públicos. Ós métodos \textbf{ResizeByUrl} e \textbf{ResizeByUpload} salvam o arquivo de imagem na pasta especificada através do construtor da classe e retornam o nome gerado para o arquivo pelo método \textbf{Rename}. Esse nome é gerado para evitar a criação de imagens caractéres especiais em seu nome evitando inclusive, sobrescrever imagens com o mesmo nome. A classe obedece a seguinte estrutura descrita abaixo:
 
 \begin{lstlisting}
 class ImageHelper {
@@ -489,7 +489,7 @@ class Model {
 \end{lstlisting}
 
             \begin{itemize}
-                \item\textbf{\$db}: Atributo protegido que se torna uma instância da classe \emph{PDO}, capaz de fazer o processo de envio e recebimento de dados entre aplicação e banco de dados. Este objeto é instanciado atravéz do construtor da classe.
+                \item\textbf{\$db}: Atributo protegido que se torna uma instância da classe \emph{PDO}, capaz de fazer o processo de envio e recebimento de dados entre aplicação e banco de dados. Este objeto é instanciado através do construtor da classe.
 
                 \item\textbf{\$\_tabela}: Atributo público que guarda uma \emph{string} como o nome da tabela, existente no banco de dados, que será manipulada pela classe.
 
@@ -497,7 +497,17 @@ class Model {
 
                 \item\textbf{insert(Array \$dados, \$debug\=FALSE)}: Método público, responsável por fazer a inserção de novos dados na tabela que está especificada na classe. O metodo \emph{insert} recebe como parâmetro um vetor, denominado \textbf{\$dados}, com os dados a serem inseridos. Este vetor, por padrão precisa conter no mínimo uma chave e um valor, onde a chave será o nome da coluna e o valor será o conteúdo desta coluna a ser inserido no banco de dados. O retorno deste método é o \emph{Id} da linha inserida caso a ação seja bem sucedida, do contrário retornará um valor nulo. O método permite um segundo parâmetro, opcional, chamado textbf{\$debug}. Debug aceita valores \emph{booleanos} onde, se receber \textbf{true} ele imprime na tela a string completa que faz a interação naquele momento com o banco de dados, no caso de \textbf{false} ele não faz nada. Por padrão \textbf{\$debud} é iniciado como falso.
 
-                \item\textbf{read(\$where\=null, \$limit\=null, \$offset\=null, \$orderby\=null, \$debug\=FALSE)}: Método público, responsável pela consulta direcionada à tabela especificada na classe. Este método fornece ao desenvolvedor a possibilidade de passar alguns parâmetros, responsáveis pela filtradem dos dados retornados. A passagem de parâmetro é opcional e possui nomenclaturas intuitivas que auxiliam no entendimento das funcionalidades. Por padrão o método \emph{read()}, sem passar parâmetro algum, retorna uma consulta completa e sem filtros da tabela especificada.
+                \item\textbf{read(\$where\=null, \$limit\=null, \$offset\=null, \$orderby\=null, \$debug\=FALSE)}: Método público, responsável pela consulta direcionada à tabela especificada na classe. Este método fornece ao desenvolvedor a possibilidade de passar alguns parâmetros, responsáveis pela filtradem dos dados retornados. A passagem de parâmetro é opcional e possui nomenclaturas intuitivas que auxiliam no entendimento das funcionalidades. Por padrão o método \emph{read()}, sem passar parâmetro algum, retorna uma consulta completa e sem filtros da tabela especificada. O restorno pode ser filtrado definindo os parâmentros do método.
+                \begin{itemize}
+                    \item\textbf{\$where}:
+                    \item\textbf{\$limit}:
+                    \item\textbf{\$offset}:
+                    \item\textbf{\$orderby}:
+                    \item\textbf{\$debug}:
+                \end{itemize}
+
+
+
 
 
             \end{itemize}
