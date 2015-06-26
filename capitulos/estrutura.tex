@@ -374,7 +374,7 @@ class PaginationHelper
             \end{figure}
 
 
-            \item\textbf{RedirectHelper}: Simples classe que fornece a possibilidade de trabalhar com redirecionamento dentro do projeto. Possui métodos para retorno de url, \empth{Controller} atual e \emph{Action} atual. Seu métodos principais são os de redirecionamento, tomando como base o \emph{controller}, a \emph{action} ou ambos como ponto de destino para este redirecionamento. A classe e seus principais métodos podem ser vistas no modelo abaixo:
+            \item\textbf{RedirectHelper}: Simples classe que fornece a possibilidade de trabalhar com redirecionamento dentro do projeto. Possui métodos para retorno de url, \emph{Controller} atual e \emph{Action} atual. Seu métodos principais são os de redirecionamento, tomando como base o \emph{controller}, a \emph{action} ou ambos como ponto de destino para este redirecionamento. A classe e seus principais métodos podem ser vistas no modelo abaixo:
 
 
 \begin{lstlisting}
@@ -493,7 +493,7 @@ class Model {
 
                 \item\textbf{\$\_tabela}: Atributo público que guarda uma \emph{string} como o nome da tabela, existente no banco de dados, que será manipulada pela classe.
 
-                \item\textbf{\$_fk}: Atributo que recebe um vetor, no caso de existeir relações entre tabelas, ligadas com chave estrangeira.
+                \item\textbf{\$\_fk}: Atributo que recebe um vetor, no caso de existeir relações entre tabelas, ligadas com chave estrangeira.
 
                 \item\textbf{insert(Array \$dados, \$debug\=FALSE)}: Método público, responsável por fazer a inserção de novos dados na tabela que está especificada na classe. O metodo \emph{insert} recebe como parâmetro um vetor, denominado \textbf{\$dados}, com os dados a serem inseridos. Este vetor, por padrão precisa conter no mínimo uma chave e um valor, onde a chave será o nome da coluna e o valor será o conteúdo desta coluna a ser inserido no banco de dados. O retorno deste método é o \emph{Id} da linha inserida caso a ação seja bem sucedida, do contrário retornará um valor nulo. O método permite um segundo parâmetro, opcional, chamado textbf{\$debug}. Debug aceita valores \emph{booleanos} onde, se receber \textbf{true} ele imprime na tela a string completa que faz a interação naquele momento com o banco de dados, no caso de \textbf{false} ele não faz nada. Por padrão \textbf{\$debud} é iniciado como falso.
 
