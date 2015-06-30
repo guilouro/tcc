@@ -474,8 +474,6 @@ class Model {
 
     public function delete( $where ) { }
 
-    private function getTableField() { }
-
     public function consulta($sql, $debug = FALSE) { }
 
     public function consultaLinha ( $sql , $debug = FALSE ) { }
@@ -484,7 +482,6 @@ class Model {
 
     public function populateFK() { }
 
-    private function debug ( $sql )  { }
 }
 \end{lstlisting}
 
@@ -535,6 +532,7 @@ class Model {
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \begin{itemize}
 
+                \item\textbf{populateFK()}: Caso a variável \textbf{\$\_fk} possua um vetor como valor, este método é capaz de percorrer cada valor, executar o método \emph{read()} referente a cada tabela e popular o retorno para uma variável como mesmo nome da tabela do banco de dados.
 
             \end{itemize}
 
