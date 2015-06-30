@@ -55,7 +55,7 @@
 
     \section{Sistema\label{sec:system-core}}
 
-        O Framework recebe um primeiro nível de divisão no processo de criação do mesmo, que é a divisão do Sistema par a Aplicação o sistema fica todo centralizado na pasta \emph{system}, e é onde contém o motor do \emph{Framework}, nele estão todas as classes responsáveis pelas regras de funcionamento do projeto, tanto nas requisições HTTP, passando por padronização de Controllers, Views até chegar ao relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
+        O Framework recebe um primeiro nível de divisão no processo de criação do mesmo, que é a divisão do Sistema da Aplicação. O sistema fica todo centralizado na pasta \emph{system}, e é onde contém o motor do \emph{Framework}, nele estão todas as classes responsáveis pelas regras de funcionamento do projeto, tanto nas requisições HTTP, passando por padronização de Controllers, Views até chegar ao relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
 
     \begin{figure}[!htb]
         \centering
@@ -545,7 +545,14 @@ class Model {
 
     \section{Aplicação\label{sec:app}}
 
-        falar do htaccess
+        O Framework recebe um segundo nível de divisão no processo de criação do mesmo, que é a parte da App, onde será construído toda a aplicação. A aplicação fica toda centralizada na pasta \emph{app}, que é onde contem a divisão \emph{MVC} da aplicação. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale=0.6]{app-path.jpg}
+        \caption{\small Estrutura interna da pasta app}
+        \label{cap:sass}
+    \end{figure}
 
         \subsection{Config\label{sec:app-config}}
 
