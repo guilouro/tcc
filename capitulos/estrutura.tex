@@ -515,6 +515,21 @@ class Model {
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \begin{itemize}
 
+                \item\textbf{delete(\$where)}: Exclui uma linha do banco de dados referente à condição passada pelo parâmentro \textbf{\$where}
+
+                \item\textbf{consulta(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar um conjunto de linhas específicos a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor com todas as linhas da tabela referente à consulta. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \end{itemize}
+                    \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
+                    \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
+                \begin{itemize}
+
+                \item\textbf{consultaLinha(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas uma linha referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor uma linha da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \end{itemize}
+                    \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
+                    \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
+                \begin{itemize}
+
+
 
             \end{itemize}
 
