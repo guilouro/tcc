@@ -572,7 +572,21 @@ class DATABASE_CONFIG {
 
             A configuração da conexão é feita através do atributo \textbf{\$default}, onde é iniciado como um vetor e cada índice recebe uma string referente aos dados de acesso.
 
+
+
         \subsection{Model\label{sec:app-model}}
+            A pasta Model guarda todas as classes de comunicação com o banco de dados, separadas por sessão. Para cada parte do sistema pode se criar uma nova classe de modelo para deixar a aplicação mais separada e de fácil entendimento. A class de modelo segue um padrão para a criação mostrado no exemplo abaixo.
+
+\begin{lstlisting}
+class Exemplo_Model extends Model {
+    public $_tabela = 'exemplo';
+}
+\end{lstlisting}
+
+            Esta é a forma mais básica para a criação da classe de um modelo \emph{\"exemplo\"}. A classe passa a ter todas as funcionalidades da classe \emph{Model} pela herança, porém direcionada à tabela \emph{\"exemplo\"}.
+
+            Seguint as boas práticas de programação e respeitando o \emph{MVC}, todas as consultas referentes a tabela \emph{\"exemplo\"} passa a serem feitas nesse modelo.
+
 
         \subsection{View\label{sec:app-view}}
 
