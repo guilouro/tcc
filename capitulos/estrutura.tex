@@ -555,6 +555,22 @@ class Model {
     \end{figure}
 
         \subsection{Config\label{sec:app-config}}
+            Pasta destinada à configuração da aplicação. O projeto inicia apenas com uma classe dentro desta pasta que é a \emph{DATABASE\_CONFIG}, responsável pela configuração da conexão com o banco de dados da aplicação. Esta classe segue a seguinte estrutura:
+
+
+\begin{lstlisting}
+class DATABASE_CONFIG {
+    public static $default = array(
+        'host' => '',
+        'login' => '',
+        'senha' => '',
+        'banco' => '',
+    );
+}
+\end{lstlisting}
+
+
+            A configuração da conexão é feita através do atributo \textbf{\$default}, onde é iniciado como um vetor e cada índice recebe uma string referente aos dados de acesso.
 
         \subsection{Model\label{sec:app-model}}
 
