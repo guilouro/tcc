@@ -508,7 +508,12 @@ class Model {
 
                 \item\textbf{readLine(\$where\=null, \$limit\=null, \$offset\=null , \$orderby\=null, \$debug\=FALSE)}: Tem a mesma caracterísca do método \emph{read()}, porém o seu retorno é de um vetor com apenas um indice baseado em uma consulta de uma linha do banco de dados.
 
-                \item\textbf{update(Array \$dados, \$where, \$debug\=FALSE)}:
+                \item\textbf{update(Array \$dados, \$where, \$debug\=FALSE)}: Atualiza os dados em determinada linha de uma tabela, utilizado o \emph{UPDATE} do mysql. O método possui a necessidade de passagem de dois parâmetros obrigatórios e da a opção de um terceiro parâmetro não obrigatório, são eles:
+                \end{itemize}
+                    \item\textbf{\$dados}: Parâmetro obrigatório que possui um vetor com os dados a serem atualizados no banco de dados.
+                    \item\textbf{\$where}: Parâmetro obrigatório com a condição a ser utilizada pelo \emph{WHERE} do mysql, com a responsabilidade de tratar em quais linhas da tabela serão feitas as subistituições solicitadas.
+                    \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
+                \begin{itemize}
 
 
             \end{itemize}
