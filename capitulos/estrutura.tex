@@ -585,12 +585,38 @@ class Exemplo_Model extends Model {
 
             Esta é a forma mais básica para a criação da classe de um modelo \emph{\"exemplo\"}. A classe passa a ter todas as funcionalidades da classe \emph{Model} pela herança, porém direcionada à tabela \emph{\"exemplo\"}.
 
-            Seguint as boas práticas de programação e respeitando o \emph{MVC}, todas as consultas referentes a tabela \emph{\"exemplo\"} passa a serem feitas nesse modelo.
+            Seguint as boas práticas de programação e respeitando o \emph{MVC}, todas as consultas referentes a tabela \emph{\"exemplo\"} passam a ser feitas nesse modelo.
+
+
+        \subsection{Controller\label{sec:app-controller}}
+            O Controller se define todas as regras de negócio da aplicação, em cada action específica e podendo ter realções entre si. O controller permite a criação de actions, que é parte do link da aplicação e também métodos comuns, que auxiliam na programação. O que diferencia a action de um método comum é a forma em que se é escrita. Vide modelo abaixo de um controller simples.
+
+\begin{lstlisting}
+class home extends Controller {
+
+    /**
+     * Exemplo de action
+     */
+    public function index_action($params = null) {
+        // view a ser usada
+        $this->view('index');
+    }
+
+    /**
+     * Exempo de método comum
+     */
+    private function metodo_exemplo() {
+        // código
+    }
+}
+\end{lstlisting}
+
+            A Classe de controller extende à classe principal \emph{Controller}, obtendo todos os métodos e atributos desta classe. Um desses métodos é o método \emph{view()}, onde é definio o templeta de view a ser usado.
+
+            Para se criar uma \emph{action} é obrigatório a utilização de um método público, a passagem de um vetor como parâmetro e a chamada de uma view dentro do método. Esses fatores que diferenciam a action de um método comum.
 
 
         \subsection{View\label{sec:app-view}}
-
-        \subsection{Controller\label{sec:app-controller}}
 
         \subsection{Lib\label{sec:app-lib}}
 
