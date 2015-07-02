@@ -629,10 +629,80 @@ class home extends Controller {
 
         \subsection{webroot\label{sec:app-lib}}
 
+            É a pasta que passa a ser tratada como a raiz do projeto pelo servidor, nela se encontra a pasta \textbf{CSS} com todos os arquivos de estilo do projeto, a pasta \textbf{JS} com os arquivos de script e a pasta \textbf{IMG} com todas as imagens. Outras pastas podem ser criadas sem restrição.
+
+            Além dessas pastas, dois arquivos muito importantes para o \emph{Framework} estão alocadas em webroot, e são esses: \textbf{.htaccess} e \textbf{index.php}. Esses são os primeiros arquivos a serem lidos pelo \emph{Framework} em qualquer chamada da aplicação. Abaixo pode ser ver o que fazem e o que fazem.
+
+            \begin{itemize}
+                \item\textbf{.htaccess}: É o primeiro arquivo a ser lido, e através dele ocorre o direcionamento da url para a criação da rota a aplicação. Sua funcionalidade recuperar a \emph{URL} em questão e passar via GET para o arquivo \textbf{index.php}. O arquivo segue a estrutura descrita abaixo.
 
 
+\begin{lstlisting}
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{SCRIPT_FILENAME} !-f
+  RewriteCond %{SCRIPT_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?url=$1
+</IfModule>
+\end{lstlisting}
 
-    \section{Divisão Backend - frontend\label{sec:back-front}}
+
+                \item\textbf{index.php}: Arquivo responsável pelo iniciar definir constantes, fazer o autoload das classes e iniciar a aplicação. Abaixo alguns pontos importantes deste arquivo.
+
+            \end{itemize}
+
+
+\begin{lstlisting}
+
+error_reporting(0);
+session_start();
+
+// Define o horário do servidor
+date_default_timezone_set("Brazil/East");
+
+\end{lstlisting}
+
+            Omite a exibição de erros e define o fuso horário do Brasil para o servidor.
+
+\begin{lstlisting}
+$_SERVER['PHP_SELF'] = str_replace("app/webroot/index.php", "", $_SERVER['PHP_SELF']);
+define('URL', $_SERVER['PHP_SELF']);
+define('IMG', URL . "img/");
+define('JS', URL . "js/");
+define('CSS', URL . "css/");
+define('FULL_URL', "http://" . $_SERVER['SERVER_NAME'] . URL);
+define( 'LIB', '../../app/Lib/' );
+define( 'FILES', '../../app/webroot/files/' );
+define( 'CONTROLLERS', '../../app/Controllers/' );
+define( 'VIEWS', '../../app/Views/' );
+define( 'LAYOUT', '../../app/Views/Layouts/' );
+define( 'MODELS', '../../app/Models/' );
+define( 'HELPERS', '../../system/helpers/' );
+define( 'SYSTEM', '../../system/' );
+define( 'CONFIG', '../../app/Config/' );
+\end{lstlisting}
+
+            Cria todas as constantes auxliares para o projeto.
+
+\begin{lstlisting}
+require_once('../../system/System.php');
+require_once('../../system/Controller.php');
+require_once('../../system/Model.php');
+require_once('../../system/TemplateParser.php');
+\end{lstlisting}
+
+            Carrega os arquivos necessários.
+
+\begin{lstlisting}
+$start = new System;
+$start->init();
+$start->run();
+\end{lstlisting}
+
+            Por fim, inicia o sistema, rodando a aplicação.
+
+
+    \section{Divisão Backend - Frontend\label{sec:back-front}}
 
 
         \subsection{Comandos do Grunt\label{sub:comandos-grunt}}
