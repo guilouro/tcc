@@ -617,10 +617,19 @@ class home extends Controller {
 
 
         \subsection{View\label{sec:app-view}}
+            A View possui uma particularidade na estrutura de suas pastas, que é a seguinte: Para cada controller é criado uma pasta dentro da pasta View, com o mesmo nome do controller, porém com a primeira letra em maiúscula como mostrado no seguinte exemplo:
+
+            Para um controller \textbf{exemplo}, é criada a pasta \textbf{View/Exemplo}, onde dentro de \textbf{Exemplo} serão criados todos os arquivos de \emph{views} referente a esse controller. Esses arquivos precisam ser criados com a extensão \textbf{.phtml} para se compreendido pelo \emph{Framework}.
+
+            Dentro de \textbf{View} existe a pasta \textbf{Layouts}, responsável por todos os templates do projeto.
 
         \subsection{Lib\label{sec:app-lib}}
 
+            Está pasta tem a função de agrupar classes ou bibliotecas específicas para determinado projeto. O acesso a essas classes fica facilidade com a utilização de uma constantes do framework denominada \textbf{LIB}.
+
         \subsection{webroot\label{sec:app-lib}}
+
+
 
 
     \section{Divisão Backend - frontend\label{sec:back-front}}
