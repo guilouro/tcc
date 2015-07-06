@@ -506,31 +506,31 @@ class Model {
                 \item\textbf{readLine(\$where\=null, \$limit\=null, \$offset\=null , \$orderby\=null, \$debug\=FALSE)}: Tem a mesma caracterísca do método \emph{read()}, porém o seu retorno é de um vetor com apenas um indice baseado em uma consulta de uma linha do banco de dados.
 
                 \item\textbf{update(Array \$dados, \$where, \$debug\=FALSE)}: Atualiza os dados em determinada linha de uma tabela, utilizado o \emph{UPDATE} do mysql. O método possui a necessidade de passagem de dois parâmetros obrigatórios e da a opção de um terceiro parâmetro não obrigatório, são eles:
-                \end{itemize}
+                \begin{itemize}
                     \item\textbf{\$dados}: Parâmetro obrigatório que possui um vetor com os dados a serem atualizados no banco de dados.
                     \item\textbf{\$where}: Parâmetro obrigatório com a condição a ser utilizada pelo \emph{WHERE} do mysql, com a responsabilidade de tratar em quais linhas da tabela serão feitas as subistituições solicitadas.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
-                \begin{itemize}
+                \end{itemize}
 
                 \item\textbf{delete(\$where)}: Exclui uma linha do banco de dados referente à condição passada pelo parâmentro \textbf{\$where}
 
                 \item\textbf{consulta(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar um conjunto de linhas específicos a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor com todas as linhas da tabela referente à consulta. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
-                \end{itemize}
+                \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
-                \begin{itemize}
+                \end{itemize}
 
                 \item\textbf{consultaLinha(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas uma linha referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor uma linha da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
-                \end{itemize}
+                \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
-                \begin{itemize}
+                \end{itemize}
 
                 \item\textbf{consultaValor(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas um valor referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um único valor da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
-                \end{itemize}
+                \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
-                \begin{itemize}
+                \end{itemize}
 
                 \item\textbf{populateFK()}: Caso a variável \textbf{\$\_fk} possua um vetor como valor, este método é capaz de percorrer cada valor, executar o método \emph{read()} referente a cada tabela e popular o retorno para uma variável como mesmo nome da tabela do banco de dados.
 
@@ -538,7 +538,7 @@ class Model {
 
         \subsection{Template\label{sub:system-template}}
 
-            O \emph{Framework Lothus\{PHP\}} possui uma forma de se trabalhar com templates e esse controle é feito através da classe \emph{TemplateParser}. A classe herda os valores e métodos da classe \emph{System}, o que permite a manipulação e utilização de alguns dados. Os templates ficam localizados dentro da pasta \empt{app\\Views\\Layouts} e por padrão o template principal é o \emph{default\.phtml}. O \emph{Framework} permite trabalhar com diversos templates, para isso existe algumas regras a serem seguidas. Primeiramente precisa ser criado um arquivo como o nome do template dentro da pasta \empt{app\\Views\\Layouts} do projeto atual, por exemplo \textbf{novo\_template.phtml}. Em seguinda é necessário inserir a tag \emph{\{conteudo\}} no local onde serão exibidas as views dependentes deste template. E finalmente dizer em quais actions do sistema farão uso desse template definindo a variábel de layout com o valor do novo template \emph{\$this->\_layout = \'novo\_template\'}. Esta variável é definida dentro do método que será responsável pela action da página em questão.
+            O \emph{Framework Lothus\{PHP\}} possui uma forma de se trabalhar com templates e esse controle é feito através da classe \emph{TemplateParser}. A classe herda os valores e métodos da classe \emph{System}, o que permite a manipulação e utilização de alguns dados. Os templates ficam localizados dentro da pasta \emph{app\\Views\\Layouts} e por padrão o template principal é o \emph{default\.phtml}. O \emph{Framework} permite trabalhar com diversos templates, para isso existe algumas regras a serem seguidas. Primeiramente precisa ser criado um arquivo como o nome do template dentro da pasta \emph{app\\Views\\Layouts} do projeto atual, por exemplo \textbf{novo\_template.phtml}. Em seguinda é necessário inserir a tag \emph{\{conteudo\}} no local onde serão exibidas as views dependentes deste template. E finalmente dizer em quais actions do sistema farão uso desse template definindo a variábel de layout com o valor do novo template \emph{\$this->\_layout = \'novo\_template\'}. Esta variável é definida dentro do método que será responsável pela action da página em questão.
 
             A funcionamento dos templates é, verificar o template padrão a ser usado, através da variável \emph{\$\_layout}, que pertence à classe \emph{Controller}, que por padrão é \emph{\'default\'}, em seguinda é feito a busca da tag \emph{\{conteudo\}} dentro deste template e esta tag é, por fim, substituída pela view que será exibida.
 
