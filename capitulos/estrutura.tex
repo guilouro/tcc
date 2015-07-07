@@ -492,9 +492,9 @@ class Model {
 
                 \item\textbf{\$\_fk}: Atributo que recebe um vetor, no caso de existeir relações entre tabelas, ligadas com chave estrangeira.
 
-                \item\textbf{insert(Array \$dados, \$debug\=FALSE)}: Método público, responsável por fazer a inserção de novos dados na tabela que está especificada na classe. O metodo \emph{insert} recebe como parâmetro um vetor, denominado \textbf{\$dados}, com os dados a serem inseridos. Este vetor, por padrão precisa conter no mínimo uma chave e um valor, onde a chave será o nome da coluna e o valor será o conteúdo desta coluna a ser inserido no banco de dados. O retorno deste método é o \emph{Id} da linha inserida caso a ação seja bem sucedida, do contrário retornará um valor nulo. O método permite um segundo parâmetro, opcional, chamado textbf{\$debug}. Debug aceita valores \emph{booleanos} onde, se receber \textbf{true} ele imprime na tela a string completa que faz a interação naquele momento com o banco de dados, no caso de \textbf{false} ele não faz nada. Por padrão \textbf{\$debud} é iniciado como falso.
+                \item\textbf{insert(Array \$dados, \$debug=FALSE)}: Método público, responsável por fazer a inserção de novos dados na tabela que está especificada na classe. O metodo \emph{insert} recebe como parâmetro um vetor, denominado \textbf{\$dados}, com os dados a serem inseridos. Este vetor, por padrão precisa conter no mínimo uma chave e um valor, onde a chave será o nome da coluna e o valor será o conteúdo desta coluna a ser inserido no banco de dados. O retorno deste método é o \emph{Id} da linha inserida caso a ação seja bem sucedida, do contrário retornará um valor nulo. O método permite um segundo parâmetro, opcional, chamado textbf{\$debug}. Debug aceita valores \emph{booleanos} onde, se receber \textbf{true} ele imprime na tela a string completa que faz a interação naquele momento com o banco de dados, no caso de \textbf{false} ele não faz nada. Por padrão \textbf{\$debud} é iniciado como falso.
 
-                \item\textbf{read(\$where\=null, \$limit\=null, \$offset\=null, \$orderby\=null, \$debug\=FALSE)}: Método público, responsável pela consulta direcionada à tabela especificada na classe. Este método fornece ao desenvolvedor a possibilidade de passar alguns parâmetros, responsáveis pela filtradem dos dados retornados. A passagem de parâmetro é opcional e possui nomenclaturas intuitivas que auxiliam no entendimento das funcionalidades. Por padrão o método \emph{read()}, sem passar parâmetro algum, retorna um vetor com dados relacionado a uma consulta completa e sem filtros da tabela especificada. O restorno pode ser filtrado definindo os parâmentros do método.
+                \item\textbf{read(\$where\=null, \$limit\=null, \$offset\=null, \$orderby\=null, \$debug=FALSE)}: Método público, responsável pela consulta direcionada à tabela especificada na classe. Este método fornece ao desenvolvedor a possibilidade de passar alguns parâmetros, responsáveis pela filtradem dos dados retornados. A passagem de parâmetro é opcional e possui nomenclaturas intuitivas que auxiliam no entendimento das funcionalidades. Por padrão o método \emph{read()}, sem passar parâmetro algum, retorna um vetor com dados relacionado a uma consulta completa e sem filtros da tabela especificada. O restorno pode ser filtrado definindo os parâmentros do método.
                 \begin{itemize}
                     \item\textbf{\$where}: Condição a ser tratada pela clausula \emph{WHERE} do mysql na consulta solicitada.
                     \item\textbf{\$limit}: Responsável por determinar o ponto final, através da quantidade de linhas retornadas.
@@ -503,9 +503,9 @@ class Model {
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{readLine(\$where\=null, \$limit\=null, \$offset\=null , \$orderby\=null, \$debug\=FALSE)}: Tem a mesma caracterísca do método \emph{read()}, porém o seu retorno é de um vetor com apenas um indice baseado em uma consulta de uma linha do banco de dados.
+                \item\textbf{readLine(\$where\=null, \$limit\=null, \$offset\=null , \$orderby\=null, \$debug=FALSE)}: Tem a mesma caracterísca do método \emph{read()}, porém o seu retorno é de um vetor com apenas um indice baseado em uma consulta de uma linha do banco de dados.
 
-                \item\textbf{update(Array \$dados, \$where, \$debug\=FALSE)}: Atualiza os dados em determinada linha de uma tabela, utilizado o \emph{UPDATE} do mysql. O método possui a necessidade de passagem de dois parâmetros obrigatórios e da a opção de um terceiro parâmetro não obrigatório, são eles:
+                \item\textbf{update(Array \$dados, \$where, \$debug=FALSE)}: Atualiza os dados em determinada linha de uma tabela, utilizado o \emph{UPDATE} do mysql. O método possui a necessidade de passagem de dois parâmetros obrigatórios e da a opção de um terceiro parâmetro não obrigatório, são eles:
                 \begin{itemize}
                     \item\textbf{\$dados}: Parâmetro obrigatório que possui um vetor com os dados a serem atualizados no banco de dados.
                     \item\textbf{\$where}: Parâmetro obrigatório com a condição a ser utilizada pelo \emph{WHERE} do mysql, com a responsabilidade de tratar em quais linhas da tabela serão feitas as subistituições solicitadas.
@@ -514,19 +514,19 @@ class Model {
 
                 \item\textbf{delete(\$where)}: Exclui uma linha do banco de dados referente à condição passada pelo parâmentro \textbf{\$where}
 
-                \item\textbf{consulta(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar um conjunto de linhas específicos a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor com todas as linhas da tabela referente à consulta. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \item\textbf{consulta(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar um conjunto de linhas específicos a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor com todas as linhas da tabela referente à consulta. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
                 \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{consultaLinha(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas uma linha referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor uma linha da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \item\textbf{consultaLinha(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas uma linha referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor uma linha da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
                 \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{consultaValor(\$sql, \$debug\=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas um valor referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um único valor da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \item\textbf{consultaValor(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas um valor referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um único valor da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
                 \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
@@ -702,7 +702,7 @@ $start->run();
             Por fim, inicia o sistema, rodando a aplicação.
 
 
-    \section{Divisão Backend - Frontend\label{sec:back-front}}
+    % \section{Divisão Backend - Frontend\label{sec:back-front}}
 
 
-        \subsection{Comandos do Grunt\label{sub:comandos-grunt}}
+    %     \subsection{Comandos do Grunt\label{sub:comandos-grunt}}
