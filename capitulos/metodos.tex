@@ -82,10 +82,10 @@
         \emph{Node.js} é uma plataforma construída sobre o motor de Javascript que tem como principal objetivo fornecer uma maneira fácil de se construir programas de rede escaláveis. Mesmo sendo um servidor de programas, não podemos confundi-lo com um servidor \emph{ready-to-install}(prontos para instalar), que são servidores que estão prontos para instalar aplicativos instantaneamente. O \emph{Node.js} segue o conceito de módulos que podem ser adicionados em seu núcleo. Há literalmente centenas de módulos para rodarem com o Node, e a comunidade é bastante ativa em produzir, publicar e atualizar dezenas de módulos por dia.
 
     \section{Automatizador Grunt\label{sec:automatizador-grunt}}
-        \emph{Grunt} é uma ferramenta que roda via termina e serve para automatizar tarefas de uma aplicação,  como: concatenação, minificação e validação de arquivos, otimização de imagem, testes unitários, deploy de arquivos por ftp ou rsync, entre outras. O \emph{Grunt} é feito totalmente em \emph{Javascript} e roda no \emph{Node.js}, portanto para ser utilizado, depende da instalação do \emph{Node.js} e do pacote \emph{NPM} previamente instalados.
+        \emph{Grunt} é uma ferramenta que roda via termina e serve para automatizar tarefas de uma aplicação, como: concatenação, minificação e validação de arquivos, otimização de imagem, testes unitários, deploy de arquivos por ftp ou rsync, entre outras. O \emph{Grunt} é feito totalmente em \emph{Javascript} e roda no \emph{Node.js}, portanto para ser utilizado, depende da instalação do \emph{Node.js} e do pacote \emph{NPM} previamente instalados.
 
     \section{Sass\label{sec:sass}}
-        É um pre-processador de folhas de estilo feito em \emph{Ruby} e responsável em auxiliar na produtividade de códigos \emph{CSS}. Literalmente falando, \emph{Sass} é uma extensão do \emph{CSS} que adiciona potência e elegância à linguagem básica. Ele permite ao desenvolvedor o uso de variáveis, mixins, importações, ampla organização do código, entre outras funcionalidade totalmentes compatíveis com \emph{CSS}. \emph{Sass} trabalha com dois tipos de \emph{sintax} diferentes, \emph{.sass} e \emph{.scss} e suas particularidas são: enquanto no arquivo \emph{.scss} são utilizados chaves \emph{"\{\}"} e ponto e vírgula \emph{";"} para delimitar o inicio e fim de atributos e valores, no \emph{.sass} essa delimitação é feita apenas por identação. Para ser utilizado em uma aplicação em produção utilizamos o arquivo \emph{CSS} gerado através da compilação do arquivo \emph{.sass} ou \emph{.scss}.
+        É um pre-processador de folhas de estilo feito em \emph{Ruby} e responsável em auxiliar na produtividade de códigos \emph{CSS}. Literalmente falando, \emph{Sass} é uma extensão do \emph{CSS} que adiciona potência e elegância à linguagem básica. Ele permite ao desenvolvedor o uso de variáveis, mixins, importações, ampla organização do código, entre outras funcionalidade totalmente compatíveis com \emph{CSS}. \emph{Sass} trabalha com dois tipos de \emph{sintaxes} diferentes, \emph{.sass} e \emph{.scss}, e suas particularidas são: enquanto no arquivo \emph{.scss} são utilizados chaves \emph{"\{\}"} e ponto e vírgula \emph{";"} para delimitar o inicio e fim de atributos e valores, no \emph{.sass} essa delimitação é feita apenas por identação. Para ser utilizado em uma aplicação em produção utiliza-se o arquivo \emph{CSS} gerado através da compilação do arquivo \emph{.sass} ou \emph{.scss}.
 
         \begin{figure}[!htb]
             \centering
@@ -100,31 +100,31 @@
 
 
     \section{Rsync\label{sec:rsync}}
-        \emph{Rsync} é uma ferramente que funciona apenas em sistemas \emph{Unix}, responsável por transferência de arquivos e capaz de sincronizar diretórios tanto locais quanto remotos. O \emph{Rsync} pode transferir arquivo \emph{Local -> Local}, \emph{Local -> Remoto}, \emph{Remoto -> Remoto}, \emph{Remoto -> Local}. Ele trabalha sobre o protocolo SSH e \emph{remote-update}, o que aumenta consideravelmente a velocidade e diminui a quantidade de dados transferidos, pois são trocados entre os servidores somente as diferenças entre dois grupos de arquivos reduzindo, também, o consumo de banda, além de ser muito mais seguro.
+        \emph{Rsync} é uma ferramente que funciona apenas em sistemas \emph{Unix}, responsável por transferência de arquivos, e capaz de sincronizar diretórios tanto locais quanto remotos. O \emph{Rsync} pode transferir arquivo \emph{Local -> Local}, \emph{Local -> Remoto}, \emph{Remoto -> Remoto}, \emph{Remoto -> Local}. Ele trabalha sobre o protocolo SSH e \emph{remote-update}, o que aumenta consideravelmente a velocidade e diminui a quantidade de dados transferidos, pois são trocados entre os servidores somente as diferenças entre dois grupos de arquivos reduzindo, também, o consumo de banda, além de ser muito mais seguro.
 
 
     \section{Controle de Versão: Git\label{sec:git}}
-        É um sistema de controle de versão distribuído e open source que registra as mudanças feitas em um ou mais arquivos de forma que você possa recuperar versões específicas. Ele nos permite reverter arquivos ou até projetos inteiros para um estado anterior, comparar mudanças feitas com o tempo, ver qual desenvolvedor alterou determinado arquivo que pode estar causando problemas, entender em que ponto do projeto surigu determinada falha no sistema entre outras funcionalidades.
+        É um sistema de controle de versão distribuído e open source que registra as mudanças feitas em um ou mais arquivos de forma que você possa recuperar versões específicas. Ele nos permite reverter arquivos ou até projetos inteiros para um estado anterior, comparar mudanças feitas com o tempo, ver qual desenvolvedor alterou determinado arquivo que pode estar causando problemas, entender em que ponto do projeto surgiu determinada falha no sistema, entre outras funcionalidades.
 
     \section{Github\label{sec:github}}
         \emph{Github} é um repositório online que utiliza o \emph{Git} como controle de versão e armazena diversos projetos, facilitando em processos de instalação e permitindo colaboração de outros desenvolvedores.
 
 
     \section{Bootstrap\label{sec:bootstrap}}
-        É um framework de front-end que tem o objetivo de facilitar o desenvolvimento de interfaces para web. Contém uma coleção de vários elementos e funções personalizáveis para projetos da web, empacotados previamente em uma única ferramenta. Por se tratar de um software livre, todos os seus elementos são personalizaveis e utilizam uma combinação de HTML, CSS e Javascript.
+        É um framework de front-end que tem o objetivo de facilitar o desenvolvimento de interfaces para web. Contém uma coleção de vários elementos e funções personalizáveis para projetos da web, empacotados previamente em uma única ferramenta. Por se tratar de um software livre, todos os seus elementos são personalizáveis e utilizam uma combinação de HTML, CSS e Javascript.
 
     \section{Javascript\label{sec:javascript}}
         É uma linguagem de programação \emph{client-side} utilizada para controlar \emph{HTML} e \emph{CSS} manipulando comportamentos e elementos de páginas web.
 
 
     \section{Jquery\label{sec:jquery}}
-        É uma biblioteca que tem como objetivo simplificar tarefas complexas da programação em \emph{Javascript}. Sua intenção é que fazer com que o desenvolvedor codifique menos porém tenha o mesmo, ou um melhor resultado sobre determinada ação.
+        É uma biblioteca que tem como objetivo simplificar tarefas complexas da programação em \emph{Javascript}. Sua intenção é que fazer com que o desenvolvedor codifique menos, porém tenha o mesmo, ou um melhor, resultado sobre determinada ação.
 
         Entre as suas características principais, a biblioteca jQuery contém:
 
         \begin{itemize}
             \item Manipulação do HTML/DOM;
-            \item Manipulação CSS;
+            \item Manipulação de CSS;
             \item Métodos de eventos HTML;
             \item Efeitos e animações;
             \item (\emph{AJAX}) Ferramenta Jquery para trocar de informações com servidor sem precisar atualizar a página web atual;
