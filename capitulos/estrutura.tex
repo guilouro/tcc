@@ -1,22 +1,22 @@
 \chapter{Estrutura e funcionamento\label{cap:detalhamento-projeto}}
 
     \section{Processo de instalação\label{sec:processo-instalacao}}
-        O \emph{Framework Lothus\{PHP\}} permite ao desenvolvedor a possibilidade de escolha entre dois níves de aplicação. O primeiro nível permite a instalação do \emph{Framework} da forma mais simples, instalando utilitário focados em um desenvolvimento direcionado ao backend do projeto, integrando facilidade a troca de informações com o banco de dados, desenvolvimento através do MVC, URLs amigáves e sistemas de templates.
+        O \emph{Framework Lothus\{PHP\}} permite ao desenvolvedor a possibilidade de escolha entre dois níves de aplicação. O primeiro nível permite a instalação do \emph{Framework} da forma mais simples, instalando utilitário focados em um desenvolvimento direcionado ao backend do projeto, integrando facilidade à troca de informações com o banco de dados, desenvolvimento através do MVC, URLs amigáves e sistemas de templates.
 
         Essa instalação é feita através do repositório remoto \emph{Github}, que se encontra no seguinte endereço online:
 
         \emph{https://github.com/guilouro/Lothus-PHP}
 
-        O Github permite duas formas de download de um projeto: fazendo o downloand de um arquivo comprimido em .zip diretamente do site ou utilizando um sistema de versionamento de arquivos para fazer o clone do mesmo. Neste projetos iremos usar o \emph{Git} como sistema de versionamento. Para fazer o clone utilizando o git executamos a seguinte linha de comando no terminal Unix ou cmd Windows:
+        O Github permite duas formas de download de um projeto: fazendo o downloand de um arquivo comprimido em .zip diretamente do site, ou utilizando um sistema de versionamento de arquivos para fazer o clone dele. Neste projeto iremos usar o \emph{Git} como sistema de versionamento. Para fazer o clone utilizando o git, executamos a seguinte linha de comando no terminal Unix ou cmd Windows:
 
         \textbf{\$ git clone https://github.com/guilouro/Lothus-PHP.git}
 
-        Ao executar essa linha de comando, uma nova pasta será criada com o nome de Lothus-PHP. Dentro desta nova pasta estará todo o projeto para iniciar o desenvolvimento utilizando o \emph{Framework Lothus\{PHP\}}. O próximo capítulo será responsável pela apresentação das pastas existentes dentro do projeto.
+        Ao executar essa linha de comando, uma nova pasta será criada com o nome de Lothus-PHP. Dentro desta nova pasta estará todo o projeto para iniciar o desenvolvimento, utilizando o \emph{Framework Lothus\{PHP\}}. O próximo capítulo será responsável pela apresentação das pastas existentes dentro do projeto.
 
 
 
     \section{Estrutura de pastas e arquivos\label{sec:estrutura-pastas}}
-        Neste capítulo será apresentado a estrutura de pastas do \emph{Framework Lothus\{PHP\}} juntamente com o processo de criação e funcionamento de cada etapa.
+        Neste capítulo será apresentada a estrutura de pastas do \emph{Framework Lothus\{PHP\}} juntamente com o processo de criação e funcionamento de cada delas.
 
         Ao clonar o projeto utilizando o git, como visto no capítulo anterior, será gerada uma estrutura de pastas dentro da pasta Lothus-PHP.
 
@@ -27,10 +27,10 @@
             \label{cap:sass}
         \end{figure}
 
-        Neste primeiro momento já ocorre uma pequena divisão do projeto onde a pasta \emph{app} é responsável por gerenciar a aplicação e a pasta \emph{system} responsável pelo \emph{core}, ou seja, gerenciamento interno do framework. Em sua raiz existe, além dessas duas pastas, três importantes arquivos para o projeto, que são:
+        Neste primeiro momento, já ocorre uma pequena divisão do projeto no qual a pasta \emph{app} é responsável por gerenciar a aplicação e a pasta \emph{system} responsável pelo \emph{core}, ou seja, gerenciamento interno do framework. Em sua raiz existem, além dessas duas pastas, três importantes arquivos para o projeto, que são:
 
         \begin{itemize}
-            \item \textbf{.gitignore}: Um arquivo que faz parte da configuração do git e é responsável por guardar, linha por linha, todos os arquivos ou pastas serão ignorados pelo git no momento de fazer o versionamento do projeto. Isso evita o acumulo de arquivos desnecessários, que são gerados automaticamente, no pacote de instalação do Framework.
+            \item \textbf{.gitignore}: Um arquivo que faz parte da configuração do git e é responsável por guardar, linha por linha, todos os arquivos ou pastas ignorados pelo git no momento de fazer o versionamento do projeto. Isso evita o acúmulo de arquivos desnecessários, que são gerados automaticamente, no pacote de instalação do Framework.
 
             \item \textbf{.htaccess}: Arquivo que é lido antes do index.php e tem a responsabilidade de criar a rota inicial do projeto, fazendo o direcionamento para o arquivo correto na inicialização do sistema.
 
@@ -41,7 +41,7 @@
                 \label{cap:sass}
             \end{figure}
 
-            \item \textbf{manage.py}: Trata-se de um script de linha de comando capaz de gerar novos arquivos baseados na arquitetura de funcionamento do \emph{Framework}. A imagem abaixo ilustra o uso básico da ferramenta.
+            \item \textbf{manage.py}: rata-se de um script de linha de comando capaz de gerar novos arquivos baseados na arquitetura de funcionamento do \emph{Framework}. A imagem abaixo ilustra o uso básico da ferramenta.
 
             \begin{figure}[!htb]
                 \centering
@@ -55,7 +55,7 @@
 
     \section{Sistema\label{sec:system-core}}
 
-        O Framework recebe um primeiro nível de divisão no processo de criação do mesmo, que é a divisão do Sistema da Aplicação. O sistema fica todo centralizado na pasta \emph{system}, e é onde contém o motor do \emph{Framework}, nele estão todas as classes responsáveis pelas regras de funcionamento do projeto, tanto nas requisições HTTP, passando por padronização de Controllers, Views até chegar ao relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
+        O Framework recebe um primeiro nível de divisão no processo de criação do mesmo, que é a divisão do Sistema da Aplicação. O sistema fica todo centralizado na pasta \emph{system}, e é onde há o motor do \emph{Framework}. Nele estão todas as classes responsáveis pelas regras de funci-onamento do projeto, tanto nas requisições HTTP, passando por padronização de Controllers, Views, até chegar ao relacionamento com o banco de dados. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
 
     \begin{figure}[!htb]
         \centering
@@ -89,7 +89,7 @@ class Config {
         \begin{itemize}
             \item\textbf{\$\_Index}: É uma variável \textbf{pública} que recebe, como string, o nome do \emph{Controller} padrão a ser requisitado pelo sistema no caso de a URL não ter, explicitamente, este valor.
 
-            \item\textbf{\$error}: Trata-se de uma \textbf{privada} váriavel booleana, que funciona como uma chave para exibir um erro para o desenvolvedor ou direcionar o usuário para uma página 404, no momento em que for acessada alguma página inexistente. No caso de \textbf{\$error = TRUE} será exibido uma mensagem de alerta ao desenvolvedor sobre alguma falha nos padrões do \emph{Framework}. Caso \textbf{\$error = FALSE} o usuário será redirecionado para uma página de \emph{erro 404}
+            \item\textbf{\$error}: Trata-se de uma variável booleana \textbf{privada}, que funciona como uma chave para exibir um erro para o desenvolvedor ou direcionar o usuário para uma página 404, no momento em que for acessada alguma página inexistente. No caso de \textbf{\$error = TRUE} será exibido uma mensagem de alerta ao desenvolvedor sobre alguma falha nos padrões do \emph{Framework}. Caso \textbf{\$error = FALSE} o usuário será redirecionado para uma página de \emph{erro 404}
 
             \item\textbf{ERROR(\$pag)}: É um método protegido, que recebe como parâmetro o nome da página que não foi encontrada no sistema. Sua funcionalidade é, inicialmente, verificar se a variável \textbf{\$error} é \textbf{TRUE} \emph{(Verdadeiro)} ou \textbf{FALSE} \emph{(False)}, para posteriormente, direcionar o usuário para a página de erro padrão do sistema ou exibir uma mensagem dizendo se o erro foi causado pela falta de um \emph{Controller} ou de uma \emph{Action} para o sistema.
         \end{itemize}
@@ -126,12 +126,12 @@ protected function ERROR($pag) {
             \begin{itemize}
                 \item\textbf{Controller:} Classe controller referente à página acessada
                 \item\textbf{Action:} Método existente nessa mesma classe
-                \item\textbf{n-parametros:} Será passado como argumento para a o método desta mesma classe controller.
+                \item\textbf{n-parametros:} Será passado como argumento para o método desta mesma classe controller.
             \end{itemize}
 
             Todos esses itens serão abordados corretamento no momento em que for descrito o funcionamento das classes de Aplicação do projeto.
 
-            Pode se explicar que a classe system, ao ser invocada, recebe a URL via GET e através de alguns métodos essa URL é desmembrada, as variáveis da classe são definidas e por fim o projeto é inicia, como demostrada na estrutura da classe logo abaixo.
+            Pode-se explicar que a classe system, ao ser invocada, recebe a URL via GET e através de alguns métodos essa URL é desmembrada, as variáveis da classe são definidas e por fim o projeto se inicia, como demostrado na estrutura da classe logo abaixo.
 
 \begin{lstlisting}
 class System extends Config {
@@ -154,7 +154,7 @@ class System extends Config {
 }
 \end{lstlisting}
 
-            A classe possui alguns atributos responsáveis por guardar determinadas informações a serem utilizadas em diversas etapas de sua leitura. Esses atributos tem suas responsabilidades descritas abaixo.
+            A classe possui alguns atributos responsáveis por guardar determinadas informações a serem utilizadas em diversas etapas de sua leitura. Esses atributos têm suas responsabilidades descritas abaixo.
 
             \begin{itemize}
                 \item\textbf{\$\_url}: Atributo público que receberá a url atual como string.
@@ -164,11 +164,11 @@ class System extends Config {
                 \item\textbf{\$\_params}: Vetor público que guardará todos os parâmetros passados pela URL.
             \end{itemize}
 
-            Esses valores são atribuídos através dos métodos que além de atribuir fazem uso dessas mesmas variáves da classe, como descrito nos elementos de cada método abaixo.
-.
+            Esses valores são atribuídos através dos métodos que além de atribuir, fazem uso dessas mesmas variável da classe, como descrito nos elementos de cada método abaixo.
+
             \begin{itemize}
 
-                \item\textbf{init()}: Primeiro método a ser chamado, explicitamente, pela classe e responsável por fazer a chamada de todos os métodos que fazem as atribuíções a todas as variáves dessa classe.
+                \item\textbf{init()}: Primeiro método a ser chamado, explicitamente, pela classe e responsável por fazer a chamada de todos os métodos que fazem as atribuições a todas as variáveis dessa classe.
 \begin{lstlisting}
 public function init() {
     $this->setUrl();
@@ -196,7 +196,7 @@ private function setExplode(){
 }
 \end{lstlisting}
 
-                \item\textbf{setController()}: Define qual controller será usadado para a requisição atual, através do primeiro índice do vetor \textbf{\$\_explode}
+                \item\textbf{setController()}: Define qual controller será usado para a requisição atual, através do primeiro índice do vetor \textbf{\$\_explode}
 
 \begin{lstlisting}
 private function setController(){
@@ -204,7 +204,7 @@ private function setController(){
 }
 \end{lstlisting}
 
-                \item\textbf{setAction()}: Define qual action será usadado para a requisição atual, através do segundo índice do vetor \textbf{\$\_explode}. Caso não exista, será atribuído o valor \textbf{"index\_action"}.
+                \item\textbf{setAction()}: Define qual action será usada para a requisição atual, através do segundo índice do vetor \textbf{\$\_explode}. Caso não exista, será atribuído o valor \textbf{"index\_action"}.
 
 \begin{lstlisting}
 private function setAction(){
@@ -216,7 +216,7 @@ private function setAction(){
 }
 \end{lstlisting}
 
-                \item\textbf{setParams()}: Responsável por criar o vetor para todos os parâmetros passados pela URL atual. Parâmetros esses que são definidos por todos o valores passados além do controller e action na string da URL.
+                \item\textbf{setParams()}: Responsável por criar o vetor para todos os parâmetros passados pela URL atual. Parâmetros esses que são definidos por todos os valores passados além do controller e action na string da URL.
 
 \begin{lstlisting}
 public function setParams(){
@@ -243,7 +243,7 @@ public function setGets(){
 }
 \end{lstlisting}
 
-                \item\textbf{setSlug(\$w)}: É responsável por verificar se o item \textbf{\$w} possui duas ou mais palavras separadas por ífem. Caso exista, esse método retira os ífens e transforma todas essas palavras em apenas uma no modo \emph{CamelCase}.
+                \item\textbf{setSlug(\$w)}: É responsável por verificar se o item \textbf{\$w} possui duas ou mais palavras separadas por ífem. Caso exista, esse método retira os hífens e transforma todas essas palavras em apenas uma no modo \emph{CamelCase}.
 
 \begin{lstlisting}
 private function setSlug($w){
@@ -263,16 +263,16 @@ private function setSlug($w){
 
 
         \subsection{Helpers\label{sub:system-helper}}
-            São classes que auxiliam o desenvolvedor no andamento do projeto, podendo ou não ser utilizadas em determinadas aplicações. O \emph{Framework} vem com algumas classes em sua instalação, podendo ser adicionadas outras se o desenvolvedor sentir necessidade. As classes se encontram dentro da pasta \textbf{helpers} e segue um padrão de nomenclatura que é o nome da classe acompanhada da palavra \emph{Helper}. Para uma classe chamada \textbf{Email} teria que ter a seguinte nomenclatura: \textbf{EmailHelper}.
+            São classes que auxiliam o desenvolvedor no andamento do projeto, podendo ou não ser utilizadas em determinadas aplicações. O \emph{Framework} vem com algumas classes em sua instalação. Outras podem ser adicionadas, se o desenvolvedor sentir necessidade. As classes se encontram dentro da pasta \textbf{helpers} e segue um padrão de nomenclatura que é o nome da classe acompanhada da palavra \emph{Helper}. Para uma classe chamada \textbf{Email}, teria que haver a seguinte nomenclatura: \textbf{EmailHelper}.
 
             O projeto acompanha algumas classes que serão descritas logo abaixo:
 
             \begin{itemize}
-                \item\textbf{AuthHelper}: Auxilia na autenticação de usuários para projetos que possuem áreas restritas. Ela se responsabiliza em fazer o login do usuário no sistema de forma segura, comparando a senha digitada com a que possui no banco de dados através da criptografia \textbf{sha512} e iniciando uma sessão para o usuário. Possui um métdo de logout, onde finaliza uma sessão com o usuário e o desconecta da área restrita do sistema. Além de possuir métodos que ajudam no controle de páginas protegidas, fazendo a verificação da permissão cada vez que o usuário tenta acessar a mesma.
+                \item\textbf{AuthHelper}: Auxilia na autenticação de usuários para projetos que possuem áreas restritas. Ela se responsabiliza em fazer o login do usuário no sistema de forma segura, comparando a senha digitada com a que possui no banco de dados através da criptografia \textbf{sha512} e iniciando uma sessão para o usuário. Possui um método de logout, que finaliza uma sessão com o usuário e o desconecta da área restrita do sistema. Além de possuir métodos que ajudam no controle de páginas protegidas, fazendo a verificação da permissão cada vez que o usuário tenta acessá-las.
 
                 \item\textbf{EmailHelper}: Classe auxiliadora para envio de emails. Extende à classe \emph{PHPMailer} e trabalha como uma facilidadora para esta, que é uma ferramenta avançada para envio de emails em \emph{php}.
 
-                \item\textbf{ImageHelper}: Esta é uma classe para otimização e salvamento de imagens nos projetos. Ela pode trabalhar tanto com imagens enviadas por um formulário quanto imagens provenientes de algum link da internet. Sua estrutura é formada apenas por um construtor e mais 3 métodos públicos. Ós métodos \textbf{ResizeByUrl} e \textbf{ResizeByUpload} salvam o arquivo de imagem na pasta especificada através do construtor da classe e retornam o nome gerado para o arquivo pelo método \textbf{Rename}. Esse nome é gerado para evitar a criação de imagens caractéres especiais em seu nome evitando inclusive, sobrescrever imagens com o mesmo nome. A classe obedece a seguinte estrutura descrita abaixo:
+                \item\textbf{ImageHelper}: Esta é uma classe para otimização e salvamento de imagens nos projetos. Ela pode trabalhar tanto com imagens enviadas por um formulário, quanto imagens provenientes de algum link da internet. Sua estrutura é formada apenas por um construtor e mais 3 métodos públicos. Os métodos \textbf{ResizeByUrl} e \textbf{ResizeByUpload} salvam o arquivo de imagem na pasta especificada através do construtor da classe e retornam o nome gerado para o arquivo pelo método \textbf{Rename}. Esse nome é gerado para evitar a criação de imagens caracteres especiais em seu nome, evitando, inclusive, sobrescrever imagens com o mesmo nome. A classe obedece à seguinte estrutura descrita abaixo:
 
 \begin{lstlisting}
 class ImageHelper {
@@ -312,7 +312,7 @@ class ImageHelper {
 }
 \end{lstlisting}
 
-            \item\textbf{PaginationHelper}: Classe capaz de dividir um conteúdo vindo do banco de dados em diversas páginas através de uma paginação. A classe permite, ao ser instanciada, receber o nome da tabela no banco de dados que será feita a consulta. Essa consulta possibilita ao desenvolvedor escolher quantos itens serão exibidos por páginas e a ordem de exibiçao. Além dessa exibição ela fornece alguns métodos auxiliares onde se pode ter o retorno da página ou url atual. A classe possui uma estrutura bem simples como mostrada abaixo.
+            \item\textbf{PaginationHelper}: Classe capaz de dividir um conteúdo vindo do banco de dados em diversas páginas através de uma paginação. A classe permite, ao ser instanciada, receber o nome da tabela no banco de dados onde será feita a consulta. Essa consulta possibilita ao desenvolvedor escolher quantos itens serão exibidos por páginas, e a ordem de exibiçao. Além dessa exibição, ela fornece alguns métodos auxiliares onde se pode ter o retorno da página ou url atual. A classe possui uma estrutura bem simples, como mostrado abaixo.
 
 \begin{lstlisting}
 class PaginationHelper
@@ -364,17 +364,17 @@ class PaginationHelper
 }
 \end{lstlisting}
 
-            Ao fazer a chamado do método \textbf{view()} no template do sistema, um componente de paginação é criado de acordo com a quantidade de páginas existente na sessão atual. Esse método, por padrão, cria o componente com uma classe de \emph{css} referente ao framework \emph{Bootstrap}. Com isso o componente passa a ter uma formatação adequada para uma paginação.
+            Ao chamar o método \textbf{view()} no template do sistema, um componente de paginação é criado de acordo com a quantidade de páginas existente na sessão atual. Esse método, por padrão, cria o componente com uma classe de \emph{css} referente ao framework \emph{Bootstrap}. Com isso o componente passa a ter uma formatação adequada para uma paginação.
 
             \begin{figure}[!htb]
                 \centering
                 \includegraphics[scale=1]{paginacao.png}
-                \caption{\small Componente de paginação criado por PaginatioHelper}
+                \caption{\small Componente de paginação criado por PaginationHelper}
                 \label{cap:paginaca}
             \end{figure}
 
 
-            \item\textbf{RedirectHelper}: Simples classe que fornece a possibilidade de trabalhar com redirecionamento dentro do projeto. Possui métodos para retorno de url, \emph{Controller} atual e \emph{Action} atual. Seu métodos principais são os de redirecionamento, tomando como base o \emph{controller}, a \emph{action} ou ambos como ponto de destino para este redirecionamento. A classe e seus principais métodos podem ser vistas no modelo abaixo:
+            \item\textbf{RedirectHelper}: Simples classe que fornece a possibilidade de trabalhar com redirecionamento dentro do projeto. Possui métodos para retorno de url, \emph{Controller} atual e \emph{Action} atual. Seus métodos principais são os de redirecionamento, tomando como base o \emph{controller}, a \emph{action} ou ambos como ponto de destino para este redirecionamento. A classe e seus principais métodos podem ser vistas no modelo abaixo:
 
 
 \begin{lstlisting}
@@ -426,7 +426,7 @@ class RedirectHelper {
 
 
         \subsection{Controller\label{sub:system-controller}}
-            Essa classe recebe a \emph{System} como herança e possui, inicialmente, dois métodos e um atributo. Sua função é guardar o template que será usado e compitar a view para o sistema. A estrutura da classa está descrita abaixo.
+            Essa classe recebe a \emph{System} como herança e possui, inicialmente, dois métodos e um atributo. Sua função é guardar o template que será usado e compilar a view para o sistema. A estrutura da classa está descrita abaixo.
 
 
 \begin{lstlisting}
@@ -442,13 +442,11 @@ class Controller extends System {
 
             \begin{itemize}
                 \item\textbf{\$\_layout}: Atributo público para definir o template base da página a ser carregada.
+
                 \item\textbf{view(\$nome\_pagina, \$vars \= null)}: Método responsável por atribuir o template da view ao template base, e recebe como primeiro parâmetro \emph{(\$nome\_pagina)} o nome do arquivo do template a ser utilizado. O Método possui um segundo parâmetro \emph{(\$vars)} opcional, que é capaz de receber um vetor e distribuí-lo em variáveis para ser utilizada no template carregado.
 
                 \item\textbf{init()}: É o primeiro método a ser chamado no momento da criação do Controller. Ele pode ser ou não implementado dentro de cada controller criado e é o primeiro método a ser executado sempre que carrega uma página.
             \end{itemize}
-
-
-        % \subsection{Url amigável e o padrão MVC\label{sub:url-amigavel}}
 
         \subsection{Model\label{sub:system-model}}
             Classe responsável por fazer a comunicação entre aplicação e banco de dados. Utizando, como padrão, o módulo nativo do php chamado \emph{PDO}. Esta classe segue a seguinte estrutura descrita abaixo.
@@ -490,11 +488,11 @@ class Model {
 
                 \item\textbf{\$\_tabela}: Atributo público que guarda uma \emph{string} como o nome da tabela, existente no banco de dados, que será manipulada pela classe.
 
-                \item\textbf{\$\_fk}: Atributo que recebe um vetor, no caso de existeir relações entre tabelas, ligadas com chave estrangeira.
+                \item\textbf{\$\_fk}: Atributo que recebe um vetor, no caso de haver relações entre tabelas, ligadas com chave estrangeira.
 
-                \item\textbf{insert(Array \$dados, \$debug=FALSE)}: Método público, responsável por fazer a inserção de novos dados na tabela que está especificada na classe. O metodo \emph{insert} recebe como parâmetro um vetor, denominado \textbf{\$dados}, com os dados a serem inseridos. Este vetor, por padrão precisa conter no mínimo uma chave e um valor, onde a chave será o nome da coluna e o valor será o conteúdo desta coluna a ser inserido no banco de dados. O retorno deste método é o \emph{Id} da linha inserida caso a ação seja bem sucedida, do contrário retornará um valor nulo. O método permite um segundo parâmetro, opcional, chamado textbf{\$debug}. Debug aceita valores \emph{booleanos} onde, se receber \textbf{true} ele imprime na tela a string completa que faz a interação naquele momento com o banco de dados, no caso de \textbf{false} ele não faz nada. Por padrão \textbf{\$debud} é iniciado como falso.
+                \item\textbf{insert(Array \$dados, \$debug=FALSE)}: Método público, responsável por fazer a inserção de novos dados na tabela que está especificada na classe. O metodo \emph{insert} recebe, como parâmetro, um vetor, denominado \textbf{\$dados}, com os dados a serem inseridos. Este vetor, por padrão precisa conter no mínimo uma chave e um valor; a chave será o nome da coluna e o valor será o conteúdo desta coluna a ser inserido no banco de dados. O retorno deste método é o \emph{Id} da linha inserida caso a ação seja bem sucedida, caso contrário retornará um valor nulo. O método permite um segundo parâmetro, opcional, chamado \textbf{\$debug}. Debug aceita valores \emph{booleanos}; se receber \textbf{true} ele imprime na tela a string completa que faz a interação naquele momento com o banco de dados, no caso de \textbf{false}, ele não faz nada. Por padrão \textbf{\$debud} é iniciado como falso.
 
-                \item\textbf{read(\$where\=null, \$limit\=null, \$offset\=null, \$orderby\=null, \$debug=FALSE)}: Método público, responsável pela consulta direcionada à tabela especificada na classe. Este método fornece ao desenvolvedor a possibilidade de passar alguns parâmetros, responsáveis pela filtradem dos dados retornados. A passagem de parâmetro é opcional e possui nomenclaturas intuitivas que auxiliam no entendimento das funcionalidades. Por padrão o método \emph{read()}, sem passar parâmetro algum, retorna um vetor com dados relacionado a uma consulta completa e sem filtros da tabela especificada. O restorno pode ser filtrado definindo os parâmentros do método.
+                \item\textbf{read(\$where\=null, \$limit\=null, \$offset\=null, \$orderby\=null, \$debug=FALSE)}: Método público, responsável pela consulta direcionada à tabela especificada na classe. Este método fornece ao desenvolvedor a possibilidade de passar alguns parâmetros, responsáveis pela filtragem dos dados retornados. A passagem de parâmetro é opcional e possui nomenclaturas intuitivas que auxiliam no entendimento das funcionalidades. Por padrão o método \emph{read()}, sem passar parâmetro algum, retorna um vetor com dados relacionado a uma consulta completa e sem filtros da tabela especificada. O retorno pode ser filtrado definindo os parâmentros do método.
                 \begin{itemize}
                     \item\textbf{\$where}: Condição a ser tratada pela clausula \emph{WHERE} do mysql na consulta solicitada.
                     \item\textbf{\$limit}: Responsável por determinar o ponto final, através da quantidade de linhas retornadas.
@@ -503,49 +501,49 @@ class Model {
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{readLine(\$where\=null, \$limit\=null, \$offset\=null , \$orderby\=null, \$debug=FALSE)}: Tem a mesma caracterísca do método \emph{read()}, porém o seu retorno é de um vetor com apenas um indice baseado em uma consulta de uma linha do banco de dados.
+                \item\textbf{readLine(\$where\=null, \$limit\=null, \$offset\=null , \$orderby\=null, \$debug=FALSE)}: Tem a mesma característica do método \emph{read()}, porém o seu retorno é de um vetor com apenas um índice, baseado em uma consulta de uma linha do banco de dados.
 
-                \item\textbf{update(Array \$dados, \$where, \$debug=FALSE)}: Atualiza os dados em determinada linha de uma tabela, utilizado o \emph{UPDATE} do mysql. O método possui a necessidade de passagem de dois parâmetros obrigatórios e da a opção de um terceiro parâmetro não obrigatório, são eles:
+                \item\textbf{update(Array \$dados, \$where, \$debug=FALSE)}: Atualiza os dados em determinada linha de uma tabela, utilizado o \emph{UPDATE} do mysql. O método possui a necessidade de passagem de dois parâmetros obrigatórios e dá a opção de um terceiro parâmetro não obrigatório, são eles:
                 \begin{itemize}
                     \item\textbf{\$dados}: Parâmetro obrigatório que possui um vetor com os dados a serem atualizados no banco de dados.
-                    \item\textbf{\$where}: Parâmetro obrigatório com a condição a ser utilizada pelo \emph{WHERE} do mysql, com a responsabilidade de tratar em quais linhas da tabela serão feitas as subistituições solicitadas.
+                    \item\textbf{\$where}: Parâmetro obrigatório com a condição a ser utilizada pelo \emph{WHERE} do mysql, com a responsabilidade de tratar em quais linhas da tabela serão feitas as substituições solicitadas.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
                 \item\textbf{delete(\$where)}: Exclui uma linha do banco de dados referente à condição passada pelo parâmentro \textbf{\$where}
 
-                \item\textbf{consulta(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar um conjunto de linhas específicos a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor com todas as linhas da tabela referente à consulta. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \item\textbf{consulta(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar um conjunto de linhas específicas a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retorna um vetor com todas as linhas da tabela referente à consulta. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados, e aceita dois parâmetros, que são os seguintes:
                 \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{consultaLinha(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas uma linha referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um vetor uma linha da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \item\textbf{consultaLinha(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas uma linha referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retorna um vetor uma linha da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados, e aceita dois parâmetros, que são os seguintes:
                 \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{consultaValor(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas um valor referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retora um único valor da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados e aceita dois parâmetros, que são os seguintes:
+                \item\textbf{consultaValor(\$sql, \$debug=FALSE)}: Este método permite ao desenvolvedor passar uma string completa de sql para retornar apenas um valor referente a essa consulta. O método recebe as regras da consulta, faz a busca no banco de dados e retorna um único valor da consulta efetuada. Esse método não utiliza a variável \$\_tabela como referência ao banco de dados, e aceita dois parâmetros, que são os seguintes:
                 \begin{itemize}
                     \item\textbf{\$sql}: Parâmetro obrigatório que recebe a string completa de consulta ao banco de dados.
                     \item\textbf{\$debug}: Imprime na tela a string completa que faz a interação naquele momento com o banco de dados.
                 \end{itemize}
 
-                \item\textbf{populateFK()}: Caso a variável \textbf{\$\_fk} possua um vetor como valor, este método é capaz de percorrer cada valor, executar o método \emph{read()} referente a cada tabela e popular o retorno para uma variável como mesmo nome da tabela do banco de dados.
+                \item\textbf{populateFK()}: Caso a variável \textbf{\$\_fk} possua um vetor como valor, este método é capaz de percorrer cada valor, executar o método \emph{read()} referente a cada tabela e popular o retorno para uma variável com o mesmo nome da tabela do banco de dados.
 
             \end{itemize}
 
         \subsection{Template\label{sub:system-template}}
 
-            O \emph{Framework Lothus\{PHP\}} possui uma forma de se trabalhar com templates e esse controle é feito através da classe \emph{TemplateParser}. A classe herda os valores e métodos da classe \emph{System}, o que permite a manipulação e utilização de alguns dados. Os templates ficam localizados dentro da pasta \emph{app\\Views\\Layouts} e por padrão o template principal é o \emph{default\.phtml}. O \emph{Framework} permite trabalhar com diversos templates, para isso existe algumas regras a serem seguidas. Primeiramente precisa ser criado um arquivo como o nome do template dentro da pasta \emph{app\\Views\\Layouts} do projeto atual, por exemplo \textbf{novo\_template.phtml}. Em seguinda é necessário inserir a tag \emph{\{conteudo\}} no local onde serão exibidas as views dependentes deste template. E finalmente dizer em quais actions do sistema farão uso desse template definindo a variábel de layout com o valor do novo template \emph{\$this->\_layout = \'novo\_template\'}. Esta variável é definida dentro do método que será responsável pela action da página em questão.
+            O \emph{Framework Lothus\{PHP\}} possui uma forma de se trabalhar com templates. Esse controle é feito através da classe \emph{TemplateParser}. A classe herda os valores e métodos da classe \emph{System}, o que permite a manipulação e utilização de alguns dados. Os templates ficam localizados dentro da pasta \emph{app\\Views\\Layouts} e por padrão o template principal é o \emph{default\.phtml}. O \emph{Framework} permite trabalhar com diversos templates, para isso existem algumas regras a serem seguidas. Primeiramente precisa ser criado um arquivo como o nome do template dentro da pasta \emph{app\\Views\\Layouts} do projeto atual, por exemplo, \textbf{novo\_template.phtml}. Em seguinda, é necessário inserir a tag \emph{\{conteudo\}} no local onde serão exibidas as views dependentes deste template. E finalmente dizer quais actions do sistema farão uso desse template definindo a variábel de layout com o valor do novo template \emph{\$this->\_layout = \'novo\_template\'}. Esta variável é definida dentro do método que será responsável pela action da página em questão.
 
             A funcionamento dos templates é, verificar o template padrão a ser usado, através da variável \emph{\$\_layout}, que pertence à classe \emph{Controller}, que por padrão é \emph{\'default\'}, em seguinda é feito a busca da tag \emph{\{conteudo\}} dentro deste template e esta tag é, por fim, substituída pela view que será exibida.
 
 
     \section{Aplicação\label{sec:app}}
 
-        O Framework recebe um segundo nível de divisão no processo de criação do mesmo, que é a parte da App, onde será construído toda a aplicação. A aplicação fica toda centralizada na pasta \emph{app}, que é onde contem a divisão \emph{MVC} da aplicação. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
+        O Framework recebe um segundo nível de divisão em seu processo de criação, que é a parte da App, onde será construída toda a aplicação. A aplicação fica toda centralizada na pasta \emph{app}, que contem a divisão \emph{MVC} da aplicação. Todas essas funcionalidades estão divididas entre classes e arquivos que serão detalhados ao longo deste capítulo.
 
     \begin{figure}[!htb]
         \centering
@@ -570,12 +568,12 @@ class DATABASE_CONFIG {
 \end{lstlisting}
 
 
-            A configuração da conexão é feita através do atributo \textbf{\$default}, onde é iniciado como um vetor e cada índice recebe uma string referente aos dados de acesso.
+            A configuração da conexão é feita através do atributo \textbf{\$default}, que é iniciado como um vetor e cada índice recebe uma string referente aos dados de acesso.
 
 
 
         \subsection{Model\label{sec:app-model}}
-            A pasta Model guarda todas as classes de comunicação com o banco de dados, separadas por sessão. Para cada parte do sistema pode se criar uma nova classe de modelo para deixar a aplicação mais separada e de fácil entendimento. A class de modelo segue um padrão para a criação mostrado no exemplo abaixo.
+            A pasta Model guarda todas as classes de comunicação com o banco de dados, separadas por sessão. Para cada parte do sistema, pode-se criar uma nova classe de modelo para deixar a aplicação mais separada e de fácil entendimento. A class de modelo segue um padrão para a criação, mostrado no exemplo abaixo.
 
 \begin{lstlisting}
 class Exemplo_Model extends Model {
@@ -583,13 +581,13 @@ class Exemplo_Model extends Model {
 }
 \end{lstlisting}
 
-            Esta é a forma mais básica para a criação da classe de um modelo \emph{\"exemplo\"}. A classe passa a ter todas as funcionalidades da classe \emph{Model} pela herança, porém direcionada à tabela \emph{\"exemplo\"}.
+            Esta é a forma mais básica para a criação da classe de um modelo \emph{"exemplo"}. A classe passa a ter todas as funcionalidades da classe \emph{Model} pela herança, porém direcionada à tabela \emph{"exemplo"}.
 
-            Seguint as boas práticas de programação e respeitando o \emph{MVC}, todas as consultas referentes a tabela \emph{\"exemplo\"} passam a ser feitas nesse modelo.
+            Seguindo as boas práticas de programação e respeitando o \emph{MVC}, todas as consultas referentes à tabela \emph{"exemplo"} passam a ser feitas nesse modelo.
 
 
         \subsection{Controller\label{sec:app-controller}}
-            O Controller se define todas as regras de negócio da aplicação, em cada action específica e podendo ter realções entre si. O controller permite a criação de actions, que é parte do link da aplicação e também métodos comuns, que auxiliam na programação. O que diferencia a action de um método comum é a forma em que se é escrita. Vide modelo abaixo de um controller simples.
+            O Controller define todas as regras de negócio da aplicação, em cada action específica e podendo ter relações entre si. O controller permite a criação de actions, que é parte do link da aplicação e também métodos comuns, que auxiliam na programação. O que diferencia a action de um método comum é a forma em que é escrita. Vide modelo abaixo de um controller simples.
 
 \begin{lstlisting}
 class home extends Controller {
@@ -611,30 +609,30 @@ class home extends Controller {
 }
 \end{lstlisting}
 
-            A Classe de controller extende à classe principal \emph{Controller}, obtendo todos os métodos e atributos desta classe. Um desses métodos é o método \emph{view()}, onde é definio o templeta de view a ser usado.
+            A Classe de controller estende à classe principal \emph{Controller}, obtendo todos os métodos e atributos desta classe. Um desses métodos é o método \emph{view()}, onde é definido o templeta de view a ser usado.
 
-            Para se criar uma \emph{action} é obrigatório a utilização de um método público, a passagem de um vetor como parâmetro e a chamada de uma view dentro do método. Esses fatores que diferenciam a action de um método comum.
+            Para se criar uma \emph{action} é obrigatória a utilização de um método público, a passagem de um vetor como parâmetro e a chamada de uma view dentro do método. Esses fatores que diferenciam a action de um método comum.
 
 
         \subsection{View\label{sec:app-view}}
             A View possui uma particularidade na estrutura de suas pastas, que é a seguinte: Para cada controller é criado uma pasta dentro da pasta View, com o mesmo nome do controller, porém com a primeira letra em maiúscula como mostrado no seguinte exemplo:
 
-            Para um controller \textbf{exemplo}, é criada a pasta \textbf{View/Exemplo}, onde dentro de \textbf{Exemplo} serão criados todos os arquivos de \emph{views} referente a esse controller. Esses arquivos precisam ser criados com a extensão \textbf{.phtml} para se compreendido pelo \emph{Framework}.
+            Para um controller \textbf{exemplo}, é criada a pasta \textbf{View/Exemplo}, onde dentro de \textbf{Exemplo} serão criados todos os arquivos de \emph{views} referente a esse controller. Esses arquivos precisam ser criados com a extensão \textbf{.phtml} para serem compreendidos pelo \emph{Framework}.
 
             Dentro de \textbf{View} existe a pasta \textbf{Layouts}, responsável por todos os templates do projeto.
 
         \subsection{Lib\label{sec:app-lib}}
 
-            Está pasta tem a função de agrupar classes ou bibliotecas específicas para determinado projeto. O acesso a essas classes fica facilidade com a utilização de uma constantes do framework denominada \textbf{LIB}.
+            Está pasta tem a função de agrupar classes ou bibliotecas específicas para determinado projeto. O acesso a essas classes fica facilitado com a utilização de uma constantes do framework denominada \textbf{LIB}.
 
         \subsection{webroot\label{sec:app-lib}}
 
-            É a pasta que passa a ser tratada como a raiz do projeto pelo servidor, nela se encontra a pasta \textbf{CSS} com todos os arquivos de estilo do projeto, a pasta \textbf{JS} com os arquivos de script e a pasta \textbf{IMG} com todas as imagens. Outras pastas podem ser criadas sem restrição.
+            É a pasta que passa a ser tratada como a raiz do projeto pelo servidor; nela se encontram a pasta \textbf{CSS} com todos os arquivos de estilo do projeto, a pasta \textbf{JS} com os arquivos de script e a pasta \textbf{IMG} com todas as imagens. Outras pastas podem ser criadas sem restrição.
 
-            Além dessas pastas, dois arquivos muito importantes para o \emph{Framework} estão alocadas em webroot, e são esses: \textbf{.htaccess} e \textbf{index.php}. Esses são os primeiros arquivos a serem lidos pelo \emph{Framework} em qualquer chamada da aplicação. Abaixo pode ser ver o que fazem e o que fazem.
+            Além dessas pastas, dois arquivos muito importantes para o \emph{Framework} estão alocadas em webroot, e são esses: \textbf{.htaccess} e \textbf{index.php}. Esses são os primeiros arquivos a serem lidos pelo \emph{Framework} em qualquer chamada da aplicação. Abaixo pode ser ver o que eles fazem.
 
             \begin{itemize}
-                \item\textbf{.htaccess}: É o primeiro arquivo a ser lido, e através dele ocorre o direcionamento da url para a criação da rota a aplicação. Sua funcionalidade recuperar a \emph{URL} em questão e passar via GET para o arquivo \textbf{index.php}. O arquivo segue a estrutura descrita abaixo.
+                \item\textbf{.htaccess}: É o primeiro arquivo a ser lido, e através dele ocorre o direcionamento da url para a criação da rota a aplicação. Sua funcionalidade é recuperar a \emph{URL} em questão e passar via GET para o arquivo \textbf{index.php}. O arquivo segue a estrutura descrita abaixo.
 
 
 \begin{lstlisting}
