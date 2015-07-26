@@ -232,10 +232,189 @@
                             </li>
                         </ul>
                     </section>
+                </section>
 
+
+                <section>
+                    <h2>Construção do Framework</h2>
+                </section>
+
+                <section>
+                    <h3>Contrução do Framework</h3>
+                    <section>
+                        <ul>
+                            <li class="fragment">"Separar" a aplicação do sistema do framework</li>
+                            <li class="fragment">Definir a estrutura padrão para os arquivos e pastas.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Estrutura de pastas.</h4>
+                        <img src="img/pastas.jpg" alt="">
+                    </section>
+
+                    <section>
+                        <h4>Escopo global</h4>
+                        <ul>
+                            <li class="fragment">
+                                <strong>.gitignore</strong>
+                                <p>Responsável por guardar, todos os arquivos ou pastas ignorados pelo versionamento do projeto no git.</p>
+                            </li>
+                            <li class="fragment">
+                                <strong>.htaccess</strong>
+                                <p>Arquivo responsável por criar a rota inicial do projeto.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section data-markdown>
+                    <script type="text/template">
+                        #### .htaccess
+                        ```
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    ^$ app/webroot/    [L]
+   RewriteRule    (.*) app/webroot/$1 [L]
+</IfModule>
+
+                        ```
+                    </script>
+                    </section>
+
+                    <section>
+                        <h3>System</h3>
+                        <p>É o motor do framework, onde ficam todas as classes responsáveis pelo funcionamento do projeto.</p>
+                        <img src="img/system-path.jpg" width="300" alt="">
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Config.php
+                            ```php
+                            class Config {
+
+                                public $_Index = " home ";
+                                private $error = TRUE;
+
+                                if($this -> error ) {
+                                    /* Erro em Controller ou Action */
+                                } else {
+                                    /* Redirecionamento */
+                                }
+
+                            }
+
+                            ```
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### System.php
+                            ```php
+                            class System extends Config {
+
+                                public $_url;
+                                private $_explode;
+                                public $_controller;
+                                public $_action;
+                                public $_params;
+
+                                public function init() {}
+                                private function setUrl() {}
+                                private function setExplode() {}
+                                private function setSlug($w ) {}
+                                private function setController() {}
+                                private function setAction() {}
+                                public function setParams() {}
+                                public function setGets() {}
+                                public function run() {}
+                            }
+                        ```
+                        </script>
+                    </section>
+
+                    <section>
+                        <h3>helpers</h3>
+                        <p>São classes que auxiliam o desenvolvedor no andamento do projeto, podendo ou não ser utilizadas em determinadas aplicações.</p>
+                        <p>Para ser identificada como um Helper a classe precisar seguir um padrão. <br> Exemplo: Para uma classe helper de <strong>Email</strong> a mesma precisa se nomeada como <strong>EmailHelper</strong>.</p>
+                    </section>
+
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Controller.php
+                            ```
+                            class Controller extends System {
+
+                                public $_layout = 'default';
+
+                                protected function view($nome_pagina , $vars = null ) { }
+
+                                public function init() { }
+                            }
+
+                            ```
+                        </script>
+                    </section>
+
+
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Model.php
+                            ```
+                            class Model {
+                                protected $db;
+                                public $_tabela;
+
+                                public function insert() { }
+
+                                public function read() { }
+
+                                public function readLine() { }
+
+                                public function update() { }
+
+                                public function delete() { }
+
+                                public function consulta() { }
+
+                                public function consultaLinha() { }
+
+                                public function consultaValor() { }
+                            }
+
+                            ```
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Template
+                            ```
+                            <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <title>Exemplo Template</title>
+                            </head>
+                            <body>
+                                {conteudo}
+                            </body>
+                            </html>
+                            ```
+
+                            `$this->_layout = 'exemplo_template.phtml'`
+
+                            `app/Views/Layouts`
+                        </script>
+                    </section>
 
 
                 </section>
+
+
 
                 <section data-background="#4d7e67">
                     <h2>Porque criar um <strong>Framework</strong>?</h2>
