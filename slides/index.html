@@ -282,6 +282,10 @@
                     </section>
 
                     <section>
+                        <h2>System</h2>
+                    </section>
+
+                    <section>
                         <h3>System</h3>
                         <p>É o motor do framework, onde ficam todas as classes responsáveis pelo funcionamento do projeto.</p>
                         <img src="img/system-path.jpg" width="300" alt="">
@@ -411,6 +415,88 @@
                         </script>
                     </section>
 
+
+                    <section>
+                        <h3>App</h3>
+                    </section>
+
+                    <section>
+                        <h3>App</h3>
+                        <img src="img/app-path.jpg" width="300" alt="">
+                    </section>
+
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Config
+                            ```
+                            class DATABASE_CONFIG {
+                                public static $default = array (
+                                    'host' => '',
+                                    'login' => '',
+                                    'senha' => '',
+                                    'banco' => '',
+                                    );
+                            }
+                            ```
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Model
+                            ```
+                            class Exemplo_Model extends Model {
+                                public $_tabela = 'exemplo';
+                            }
+                            ```
+                        </script>
+                    </section>
+
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            #### Controller
+                            ```
+                            class home extends Controller {
+
+                                /* *
+                                 * Exemplo de action
+                                 */
+                                public function index_action ( $params = null ) {
+
+                                    // view a ser usada
+                                   $this -> view ('index');
+                                }
+
+                                /* *
+                                 * Exempo de método comum
+                                 */
+                                private function metodo_exemplo () {
+                                    // código
+                                }
+                            }
+                            ```
+                        </script>
+                    </section>
+
+                    <section>
+                        <h3>Views</h3>
+                        <p class="fragment">Para cada controller é criado uma pasta dentro da pasta View.</p>
+                        <p class="fragment">Para um controller <strong>exemplo</strong>, é criada a pasta <strong>app/View/Exemplo</strong>.</p>
+                        <p class="fragment">Esta pasta guarda todas as views para esse controller.</p>
+                        <p class="fragment">As Views possuem extensão .phtml, como os arquivos de template.</p>
+
+                    </section>
+
+                    <section>
+                        <h3>Lib</h3>
+                        <p>Tem a função de agrupar classes ou bibliotecas específicas para determinado projeto. O acesso a essas classes fica facilitado com a utilização de uma constantes do framework denominada LIB.</p>
+                    </section>
+
+                    <section>
+                        <h3>Webroot</h3>
+                    </section>
 
                 </section>
 
