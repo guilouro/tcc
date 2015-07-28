@@ -500,9 +500,97 @@
                         <p class="fragment">CSS - JS - IMG</p>
                     </section>
 
-                    <section>
-                        <h3>Webroot</h3>
-                        <p class="fragment">.htaccess:</p>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ### Webroot
+
+                        ####.htaccess
+                        ```
+                        <IfModule mod_rewrite .c>
+                            RewriteEngine on
+                            RewriteCond %{ SCRIPT_FILENAME } !-f
+                            RewriteCond %{ SCRIPT_FILENAME } !-d
+                            RewriteRule ^(.*)$ index.php?url=$1
+                        </IfModule>
+
+                        ```
+                        </script>
+
+                    </section>
+
+
+                    <section data-markdown>
+                        <script type="text/template">
+                        ####index.php
+                        ```
+                        error_reporting(0);
+                        session_start();
+
+                        // Define o hor á rio do servidor
+                        date_default_timezone_set("Brazil/East");
+                        ```
+
+                        `Omite os erros e define o fuso horário.`
+                        </script>
+
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                        ####index.php
+                        ```
+                        $_SERVER['PHP_SELF'] = str_replace("app/webroot/index.php", "", $_SERVER['PHP_SELF']);
+
+                        define('URL', $_SERVER['PHP_SELF']);
+                        define('IMG', URL . "img/");
+                        define('JS', URL . "js/");
+                        define('CSS', URL . "css/");
+                        define('FULL_URL', "http://" . $_SERVER['SERVER_NAME'] . URL);
+
+
+                        define( 'LIB', '../../app/Lib/' );
+                        define( 'FILES', '../../app/webroot/files/' );
+                        define( 'CONTROLLERS', '../../app/Controllers/' );
+                        define( 'VIEWS', '../../app/Views/' );
+                        define( 'LAYOUT', '../../app/Views/Layouts/' );
+                        define( 'MODELS', '../../app/Models/' );
+                        define( 'HELPERS', '../../system/helpers/' );
+                        define( 'SYSTEM', '../../system/' );
+                        define( 'CONFIG', '../../app/Config/' );
+                        ```
+
+                        `Cria as constantes auxliares para o projeto.`
+                        </script>
+
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                        ####index.php
+                        ```
+                        require_once('../../system/System.php');
+                        require_once('../../system/Controller.php');
+                        require_once('../../system/Model.php');
+                        require_once('../../system/TemplateParser.php');
+                        ```
+
+                        `Carrega os arquivos necessários.`
+                        </script>
+
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                        ####index.php
+                        ```
+                        $start = new System;
+                        $start->init();
+                        $start->run();
+                        ```
+
+                        `E finalmente o start do projeto.`
+                        </script>
+
                     </section>
 
                 </section>
@@ -510,21 +598,32 @@
 
 
                 <section data-background="#4d7e67">
-                    <h2>Porque criar um <strong>Framework</strong>?</h2>
-                    <ul>
-                        <li class="fragment">Entregar mais em menos tempo</li>
-                        <li class="fragment">Reaproveitamento de códigos</li>
-                        <li class="fragment">Criação de padrões</li>
-                        <li class="fragment">Trabalho cada vez mais ágil</li>
-                    </ul>
+                    <h2>Começando um novo projeto com o framework.</h2>
+                </section>
+
+
+                <section data-background="#4d7e67">
+                        git clone https://github.com/guilouro/Lothus-PHP.git
+                </section>
+
+
+                <section data-background="#4d7e67">
+                        <h4>Baixar o arquivo zip em:</h4>
+                        https://github.com/guilouro/Lothus-PHP/archive/master.zip
+                </section>
+
+
+                <section data-background="#4d7e67">
+                        <h4>Plus:</h4>
+                        https://github.com/guilouro/boilerplate-lothus-php.git
+                    </script>
                 </section>
 
 
 
-
-
-
-
+                <section>
+                    <h2>Casos de Uso</h2>
+                </section>
 
 
 
