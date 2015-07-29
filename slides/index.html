@@ -458,15 +458,15 @@
                         <script type="text/template">
                             #### Controller
                             ```
-                            class home extends Controller {
+                            class noticias extends Controller {
 
                                 /* *
                                  * Exemplo de action
                                  */
-                                public function index_action ( $params = null ) {
+                                public function detalhes ( $params = null ) {
 
                                     // view a ser usada
-                                   $this -> view ('index');
+                                   $this -> view ('detalhes');
                                 }
 
                                 /* *
@@ -477,6 +477,8 @@
                                 }
                             }
                             ```
+
+                            `http://exemplo.com/noticias/detalhes/parametro1/parametro2`
                         </script>
                     </section>
 
@@ -651,18 +653,18 @@
                 </section>
 
 
-                <section>
+                <section data-background="img/black.jpg">
                     <h2>Conclusão</h2>
                 </section>
 
-                <section>
+                <section data-background="img/black.jpg">
                     <h3>Conclusão</h3>
                     <p>O objetivo do trabalho foi desenvolver um Framework utilizando PHP e MVC, a fim de facilitar a criação de sites e sistemas</p>
 
                     <p>O framework atendeu às expectativas esperadas, uma vez que, sistemas e sites foram implementados de maneira eficaz, realizando o que a ferramenta se propõe a fazer.</p>
                 </section>
 
-                <section>
+                <section data-background="img/black.jpg">
                     <h3>Referências</h3>
                     <ul>
                         <li><small><p>Thiago Belem. Principais falhas de segurança no PHP. Disponível em: http://blog.
@@ -695,7 +697,7 @@
                     </ul>
                 </section>
 
-                <section>
+                <section data-background="img/black.jpg">
                     <h3>Referências</h3>
                     <ul>
                         <li>
