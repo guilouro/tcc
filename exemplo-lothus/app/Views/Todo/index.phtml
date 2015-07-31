@@ -1,0 +1,28 @@
+<?php if (!empty($to_do)): ?>
+
+
+<table border="1" cellpadding="5">
+    <th>ID</th>
+    <th>Task</th>
+    <th></th>
+
+    <?php foreach ($to_do as $t): ?>
+
+    <tr>
+        <td><?= $t['id_todo'] ?></td>
+        <td><?= $t['task'] ?></td>
+        <td>
+            <a href="<?= URL ?>todo/editar/<?= $t['id_todo'] ?>">Editar</a> |
+            <a href="<?= URL ?>todo/excluir/<?= $t['id_todo'] ?>">Excluir</a>
+        </td>
+    </tr>
+
+    <?php endforeach ?>
+
+</table>
+
+<?php else: ?>
+
+    <h2>Nada cadastrado até o momento</h2>
+
+<?php endif ?>
