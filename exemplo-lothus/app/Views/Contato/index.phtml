@@ -1,0 +1,41 @@
+<div class="row">
+
+	
+	<?php if(isset($status)): ?>
+
+		<div class="col-md-12">
+			<div class="alert <?= $alert ?> centro">
+		 	 	<button type="button" class="close" data-dismiss="alert">&times;</button>
+		  		<?= $status ?>
+			</div>
+		</div>
+
+	<?php endif ?>
+
+
+	<form method="post" action="<?= URL ?>contato" class="well span8">
+	  <div class="row">
+			<div class="col-md-3">
+				<label>Nome</label>
+				<input name="nome" type="text" class="form-control" placeholder="Seu nome">
+				<label>Email</label>
+				<input name="email" type="text" class="form-control" placeholder="Seu email">
+				<label>Assunto</label>
+				<input name="assunto" type="text" class="form-control" placeholder="Assunto">
+			</div>
+			<div class="col-md-5">
+				<label>Mensagem</label>
+				<textarea name="mensagem" id="message" class="input-xlarge col-md-5" rows="8"></textarea>
+			</div>
+		
+			<button type="submit" class="btn btn-warning pull-right">Enviar</button>
+		</div>
+	</form>
+
+	<div class="well col-md-3 pull-right">
+		<strong>Lorem ipsum dolor sit. </strong><br/>
+		Lorem ipsum. <br/>
+		Tel.: (xx) xxxx-xxxx <br/>
+
+	</div>
+</div>
